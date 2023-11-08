@@ -7,11 +7,11 @@ class CategoryList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(20, 0, 0, 32),
+      padding: const EdgeInsets.fromLTRB(20, 40, 0, 32),
       width: double.infinity,
       child: Wrap(
         spacing: 8.0, // Промежуток между элементами
-        runSpacing: 20.0, // Промежуток между строками
+        runSpacing: 10.0, // Промежуток между строками
         children: categories.map((item) {
           return FilterChip(
             onSelected: (bool value) {},

@@ -7,26 +7,18 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 466,
-      height: 253,
+      width: double.infinity,
+      height: 215,
       child: Stack(
         children: [
           Positioned(
             left: 232,
             top: -40,
-            child: SizedBox(
-              width: 234,
-              height: 234,
-              child: Center(
-                child: SizedBox(
-                  width: 210.6,
-                  height: 209.8,
-                  child: SvgPicture.asset(
-                    'assets/svg/vegetables.svg',
-                    width: 234,
-                    height: 234,
-                  ),
-                ),
+            child: Center(
+              child: SvgPicture.asset(
+                'assets/svg/vegetables.svg',
+                width: 234,
+                height: 234,
               ),
             ),
           ),
@@ -53,7 +45,7 @@ class Header extends StatelessWidget {
             left: 20,
             top: 165,
             child: Container(
-              padding: const EdgeInsets.fromLTRB(25, 12, 265, 14),
+              padding: const EdgeInsets.fromLTRB(22, 12, 22, 12),
               width: 374,
               height: 48,
               decoration: BoxDecoration(
@@ -66,9 +58,7 @@ class Header extends StatelessWidget {
                 children: [
                   Flexible(
                     child: Container(
-                      margin: const EdgeInsets.fromLTRB(0, 2, 19, 0),
-                      width: 24,
-                      height: 24,
+                      margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
                       child: SvgPicture.asset(
                         'assets/svg/search.svg',
                         width: 24,
@@ -76,13 +66,17 @@ class Header extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const Text(
-                    'Search',
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w400,
-                      letterSpacing: -0.41,
-                      color: Color(0xff9586a8),
+                  const SizedBox(
+                    width: 290,
+                    height: 24,
+                    child: Text(
+                      'Search',
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w400,
+                        letterSpacing: -0.41,
+                        color: Color(0xff9586a8),
+                      ),
                     ),
                   ),
                 ],
@@ -98,18 +92,12 @@ class Header extends StatelessWidget {
               height: 96,
               child: Align(
                 alignment: Alignment.centerLeft,
-                child: SizedBox(
-                  width: 6,
-                  height: 12,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                    child: SvgPicture.asset(
-                      'assets/svg/Vector.svg',
-                      width: 6,
-                      height: 12,
-                    ),
+                child: GestureDetector(
+                  onTap: () => Navigator.pop(context),
+                  child: SvgPicture.asset(
+                    'assets/svg/Vector.svg',
+                    width: 6,
+                    height: 12,
                   ),
                 ),
               ),
