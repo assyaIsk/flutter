@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vegetables/widgets/screens/home_screen.dart';
-import 'package:vegetables/widgets/screens/vegetables_screen.dart';
+import 'package:vegetables/screens/home_screen.dart';
+import 'package:vegetables/screens/tabs.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/': (context) => const HomeScreen(),
-        '/vegetables': (context) => const VegetablesScreen(),
+        '/vegetables': (context) => const Tabs(),
       },
     );
   }
