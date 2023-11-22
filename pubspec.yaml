@@ -66,10 +66,12 @@ flutter:
     - assets/svg/Vector.svg
     - assets/svg/check.svg
     - assets/svg/heart.svg
+    - assets/svg/Dots.svg
     - assets/svg/shopping-cart.svg
     - assets/images/Media.png
     - assets/images/Media2.png
     - assets/images/Media3.png
+    - assets/Media.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

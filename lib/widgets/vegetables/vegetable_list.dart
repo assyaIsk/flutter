@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/models/vegetable_model.dart';
+import 'package:vegetables/screens/vegetable_detail.dart';
 
 class VegetableList extends StatelessWidget {
   const VegetableList({super.key});
@@ -28,8 +29,18 @@ class VegetableList extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   color: const Color(0xffdbd8dd),
                 ),
-                child: Image.asset(
-                  vegetables[index].imageUrl,
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (ctx) =>
+                            VegetableDetailScreen(vegetable: vegetables[index]),
+                      ),
+                    );
+                  },
+                  child: Image.asset(
+                    vegetables[index].imageUrl,
+                  ),
                 ),
               ),
               SizedBox(

@@ -1,14 +1,17 @@
 enum Units { piece, kg }
 
 class Vegetables {
-  const Vegetables(
-      {required this.name,
-      required this.price,
-      required this.unit,
-      required this.imageUrl});
+  const Vegetables({
+    required this.name,
+    required this.price,
+    required this.unit,
+    required this.imageUrl,
+    required this.text,
+  });
 
   final String name;
   final double price;
   final Units unit;
   final String imageUrl;
+  final String text;
 }
