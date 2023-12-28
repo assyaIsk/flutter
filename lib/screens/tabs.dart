@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:vegetables/screens/payment_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:vegetables/providers/favorites_provider.dart';
+import 'package:vegetables/screens/favorites_screen.dart';
 import 'package:vegetables/screens/vegetables_screen.dart';
 
-class Tabs extends StatefulWidget {
+class Tabs extends ConsumerStatefulWidget {
   const Tabs({super.key});
 
   @override
-  State<Tabs> createState() {
+  ConsumerState<Tabs> createState() {
     return _Footer();
   }
 }
 
-class _Footer extends State<Tabs> {
+class _Footer extends ConsumerState<Tabs> {
   int _selectedPageIndex = 0;
 
   void _selectPage(int index) {
@@ -25,7 +27,10 @@ class _Footer extends State<Tabs> {
     Widget activePage = const VegetablesScreen();
 
     if (_selectedPageIndex == 1) {
-      activePage = const PaymentScreen();
+      final favoriteVegetales = ref.watch(favoriteVegetablesProvider);
+      activePage = FavoritesScreen(
+        vegetables: favoriteVegetales,
+      );
     }
 
     return Scaffold(

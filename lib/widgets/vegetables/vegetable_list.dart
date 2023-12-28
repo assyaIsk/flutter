@@ -1,14 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:vegetables/models/vegetable_model.dart';
+import 'package:vegetables/data/vegetables.dart';
+import 'package:vegetables/providers/favorites_provider.dart';
 import 'package:vegetables/screens/vegetable_detail.dart';
 import 'package:vegetables/styles/style.dart';
+import 'dart:developer' as developer;
 
-class VegetableList extends StatelessWidget {
-  const VegetableList({super.key});
+class VegetableList extends ConsumerWidget {
+  const VegetableList({
+    super.key,
+    required List<Vegetables>? vegetables,
+  }) : vegetables = vegetables ?? const [];
+  final List<Vegetables> vegetables;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    developer.log("vegetables $vegetables");
     return Expanded(
       child: ListView.builder(
         padding: const EdgeInsets.only(top: 0),
@@ -94,18 +102,29 @@ class VegetableList extends StatelessWidget {
                             width: 78,
                             height: 40,
                             child: OutlinedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                ref
+                                    .read(favoriteVegetablesProvider.notifier)
+                                    .toggleVegetableFavoriteStatus(
+                                        vegetables[index]);
+                              },
                               style: OutlinedButton.styleFrom(
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
                                 backgroundColor: AppStyles.whiteBtnColor,
                               ),
-                              child: SvgPicture.asset(
-                                'assets/svg/heart.svg',
-                                width: 20,
-                                height: 20,
-                              ),
+                              child: vegetables[index].isFavorite == false
+                                  ? SvgPicture.asset(
+                                      'assets/svg/heart.svg',
+                                      width: 20,
+                                      height: 20,
+                                    )
+                                  : SvgPicture.asset(
+                                      'assets/svg/favorite.svg',
+                                      width: 20,
+                                      height: 20,
+                                    ),
                             ),
                           ),
                           SizedBox(

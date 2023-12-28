@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vegetables/models/vegetable_model.dart';
 import 'package:vegetables/styles/style.dart';
 import 'package:vegetables/widgets/vegetables/category_list.dart';
 import 'package:vegetables/widgets/vegetables/header.dart';
@@ -9,17 +10,17 @@ class VegetablesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DecoratedBox(
-      decoration: BoxDecoration(color: AppStyles.backgroundColor),
+    return DecoratedBox(
+      decoration: const BoxDecoration(color: AppStyles.backgroundColor),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           //header
-          Header(),
+          const Header(),
           // categories
-          CategoryList(),
+          const CategoryList(),
           //list of vegetables
-          VegetableList(),
+          VegetableList(vegetables: vegetables),
         ],
       ),
     );

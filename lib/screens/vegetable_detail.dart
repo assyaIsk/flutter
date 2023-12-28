@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/data/vegetables.dart';
+import 'package:vegetables/providers/favorites_provider.dart';
 import 'package:vegetables/styles/style.dart';
 
-class VegetableDetailScreen extends StatelessWidget {
+class VegetableDetailScreen extends ConsumerWidget {
   const VegetableDetailScreen({super.key, required this.vegetable});
   final Vegetables vegetable;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -142,17 +144,27 @@ class VegetableDetailScreen extends StatelessWidget {
                             width: 78,
                             height: 56,
                             child: OutlinedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                ref
+                                    .read(favoriteVegetablesProvider.notifier)
+                                    .toggleVegetableFavoriteStatus(vegetable);
+                              },
                               style: OutlinedButton.styleFrom(
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),
                                   backgroundColor: AppStyles.whiteBtnColor),
-                              child: SvgPicture.asset(
-                                'assets/svg/heart.svg',
-                                width: 20,
-                                height: 20,
-                              ),
+                              child: vegetable.isFavorite == false
+                                  ? SvgPicture.asset(
+                                      'assets/svg/heart.svg',
+                                      width: 20,
+                                      height: 20,
+                                    )
+                                  : SvgPicture.asset(
+                                      'assets/svg/favorite.svg',
+                                      width: 20,
+                                      height: 20,
+                                    ),
                             ),
                           ),
                           SizedBox(
