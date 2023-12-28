@@ -1,4 +1,4 @@
-import '../models/category_model.dart';
+import '../data/category.dart';
 
 var categories = [
   Category(

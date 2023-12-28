@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vegetables/data/categories.dart';
+import 'package:vegetables/models/categories_model.dart';
 import 'package:vegetables/styles/style.dart';
 
 class CategoryList extends StatefulWidget {
