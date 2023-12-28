@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/models/vegetable_model.dart';
 import 'package:vegetables/screens/vegetable_detail.dart';
+import 'package:vegetables/styles/style.dart';
 
 class VegetableList extends StatelessWidget {
   const VegetableList({super.key});
@@ -27,7 +28,7 @@ class VegetableList extends StatelessWidget {
                 height: 128,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: const Color(0xffdbd8dd),
+                  color: AppStyles.violetLightColor,
                 ),
                 child: GestureDetector(
                   onTap: () {
@@ -51,15 +52,8 @@ class VegetableList extends StatelessWidget {
                     SizedBox(
                       width: 177,
                       height: 24,
-                      child: Text(
-                        vegetables[index].name,
-                        style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w600,
-                          letterSpacing: -0.41,
-                          color: Color(0xff2d0c57),
-                        ),
-                      ),
+                      child: Text(vegetables[index].name,
+                          style: AppStyles.violetDarkTextStyle18),
                     ),
                     const SizedBox(
                       height: 12,
@@ -73,24 +67,14 @@ class VegetableList extends StatelessWidget {
                           Flexible(
                             child: Text(
                               vegetables[index].price.toString(),
-                              style: const TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.w700,
-                                letterSpacing: -0.41,
-                                color: Color(0xff2d0c57),
-                              ),
+                              style: AppStyles.detailTextStyle22,
                             ),
                           ),
                           Center(
                             child: Text(
                               '€ /${vegetables[index].unit.name}',
                               textAlign: TextAlign.center,
-                              style: const TextStyle(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: -0.41,
-                                color: Color(0xff9586a8),
-                              ),
+                              style: AppStyles.violetTextStyle16,
                             ),
                           ),
                         ],
@@ -115,7 +99,7 @@ class VegetableList extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                backgroundColor: const Color(0xFFFFFFFF),
+                                backgroundColor: AppStyles.whiteBtnColor,
                               ),
                               child: SvgPicture.asset(
                                 'assets/svg/heart.svg',
@@ -128,7 +112,7 @@ class VegetableList extends StatelessWidget {
                             width: 78,
                             height: 40,
                             child: IconButton(
-                              color: const Color(0xFF0BCE83),
+                              color: AppStyles.greenBtnColor,
                               icon: SvgPicture.asset(
                                 'assets/svg/shopping-cart.svg',
                                 width: 20,
@@ -139,7 +123,7 @@ class VegetableList extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                backgroundColor: const Color(0xFF0BCE83),
+                                backgroundColor: AppStyles.greenBtnColor,
                               ),
                             ),
                           ),

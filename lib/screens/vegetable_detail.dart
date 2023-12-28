@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/data/vegetables.dart';
+import 'package:vegetables/styles/style.dart';
 
 class VegetableDetailScreen extends StatelessWidget {
   const VegetableDetailScreen({super.key, required this.vegetable});
@@ -13,7 +14,7 @@ class VegetableDetailScreen extends StatelessWidget {
         width: double.infinity,
         height: 896,
         decoration: const BoxDecoration(
-          color: Color(0xfff6f5f5),
+          color: AppStyles.backgroundColor,
         ),
         child: Stack(
           children: [
@@ -24,9 +25,8 @@ class VegetableDetailScreen extends StatelessWidget {
                 child: Container(
                   width: 414,
                   height: 358,
-                  decoration: const BoxDecoration(
-                    color: Color(0xffdbd8dd),
-                  ),
+                  decoration:
+                      const BoxDecoration(color: AppStyles.violetLightColor),
                   child: Image.asset(
                     'assets/Media.png',
                   ),
@@ -50,21 +50,17 @@ class VegetableDetailScreen extends StatelessWidget {
               left: 0,
               top: 0,
               child: Container(
-                padding: const EdgeInsets.fromLTRB(21, 62, 21, 22),
+                padding: const EdgeInsets.fromLTRB(21, 62, 387, 22),
                 width: 414,
                 height: 96,
                 child: Align(
                   alignment: Alignment.centerLeft,
-                  child: SizedBox(
-                    width: 6,
-                    height: 12,
-                    child: GestureDetector(
-                      onTap: () => Navigator.pop(context),
-                      child: SvgPicture.asset(
-                        'assets/svg/Vector.svg',
-                        width: 6,
-                        height: 12,
-                      ),
+                  child: GestureDetector(
+                    onTap: () => Navigator.pop(context),
+                    child: SvgPicture.asset(
+                      'assets/svg/Vector.svg',
+                      width: 6,
+                      height: 12,
                     ),
                   ),
                 ),
@@ -78,7 +74,7 @@ class VegetableDetailScreen extends StatelessWidget {
                 width: 414,
                 height: 615,
                 decoration: const BoxDecoration(
-                  color: Color(0xfff6f5f5),
+                  color: AppStyles.backgroundColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
@@ -91,13 +87,7 @@ class VegetableDetailScreen extends StatelessWidget {
                       margin: const EdgeInsets.fromLTRB(0, 0, 0, 16),
                       child: Text(
                         vegetable.name,
-                        style: const TextStyle(
-                          fontSize: 30,
-                          fontWeight: FontWeight.w700,
-                          height: 1.3666666667,
-                          letterSpacing: 0.41,
-                          color: Color(0xff2d0c57),
-                        ),
+                        style: AppStyles.detailTitleTextStyle30,
                       ),
                     ),
                     Container(
@@ -110,55 +100,27 @@ class VegetableDetailScreen extends StatelessWidget {
                             margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
                             child: Text(
                               vegetable.price.toString(),
-                              style: const TextStyle(
-                                fontSize: 32,
-                                fontWeight: FontWeight.w700,
-                                height: 1.3463542461,
-                                letterSpacing: -0.8029167056,
-                                color: Color(0xff2d0c57),
-                              ),
+                              style: AppStyles.detailTextStyle22,
                             ),
                           ),
                           Text(
                             '€ / ${vegetable.unit.name}',
                             textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              fontSize: 24,
-                              fontWeight: FontWeight.w400,
-                              height: 1.7951389949,
-                              letterSpacing: -0.8029167056,
-                              color: Color(0xff9586a8),
-                            ),
+                            style: AppStyles.detailSubTextStyle24,
                           ),
                         ],
                       ),
                     ),
                     Container(
                       margin: const EdgeInsets.fromLTRB(0, 0, 0, 32),
-                      child: const Text(
-                        '~ 150 gr / piece',
-                        style: TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w500,
-                          height: 1.5,
-                          letterSpacing: -0.41,
-                          color: Color(0xff05be77),
-                        ),
-                      ),
+                      child: const Text('~ 150 gr / piece',
+                          style: AppStyles.detailGreenTextStyle17),
                     ),
                     Container(
                       // title3A7 (102:4859)
                       margin: const EdgeInsets.fromLTRB(0, 0, 0, 18),
-                      child: const Text(
-                        'Spain',
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.w700,
-                          height: 1,
-                          letterSpacing: -0.41,
-                          color: Color(0xff2d0c57),
-                        ),
-                      ),
+                      child: const Text('Spain',
+                          style: AppStyles.detailTextStyle22),
                     ),
                     Container(
                       // textAkX (102:4862)
@@ -166,16 +128,8 @@ class VegetableDetailScreen extends StatelessWidget {
                       constraints: const BoxConstraints(
                         maxWidth: 362,
                       ),
-                      child: Text(
-                        vegetable.text,
-                        style: const TextStyle(
-                          fontSize: 17,
-                          fontWeight: FontWeight.w400,
-                          height: 1.5,
-                          letterSpacing: -0.41,
-                          color: Color(0xff9586a8),
-                        ),
-                      ),
+                      child: Text(vegetable.text,
+                          style: AppStyles.detailVioletTextStyle17),
                     ),
                     SizedBox(
                       width: double.infinity,
@@ -190,11 +144,10 @@ class VegetableDetailScreen extends StatelessWidget {
                             child: OutlinedButton(
                               onPressed: () {},
                               style: OutlinedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                backgroundColor: const Color(0xFFFFFFFF),
-                              ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  backgroundColor: AppStyles.whiteBtnColor),
                               child: SvgPicture.asset(
                                 'assets/svg/heart.svg',
                                 width: 20,
@@ -208,7 +161,8 @@ class VegetableDetailScreen extends StatelessWidget {
                             child: TextButton.icon(
                               label: const Text(
                                 'ADD TO CART',
-                                style: TextStyle(color: Colors.white),
+                                style:
+                                    TextStyle(color: AppStyles.whiteBtnColor),
                               ),
                               icon: SvgPicture.asset(
                                 'assets/svg/shopping-cart.svg',
@@ -217,11 +171,10 @@ class VegetableDetailScreen extends StatelessWidget {
                               ),
                               onPressed: () {},
                               style: OutlinedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                backgroundColor: const Color(0xFF0BCE83),
-                              ),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(8.0),
+                                  ),
+                                  backgroundColor: AppStyles.greenBtnColor),
                             ),
                           ),
                         ],

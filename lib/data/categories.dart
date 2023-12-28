@@ -1,6 +1,6 @@
 import '../models/category_model.dart';
 
-const categories = [
+var categories = [
   Category(
     name: 'Сabbage and lettuce',
     count: 14,

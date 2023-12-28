@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:vegetables/styles/style.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key});
@@ -29,15 +30,8 @@ class Header extends StatelessWidget {
               child: SizedBox(
                 width: 158,
                 height: 41,
-                child: Text(
-                  'Vegetables',
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 0.41,
-                    color: Color(0xFF2D0C57),
-                  ),
-                ),
+                child:
+                    Text('Vegetables', style: AppStyles.detailTitleTextStyle30),
               ),
             ),
           ),
@@ -49,8 +43,8 @@ class Header extends StatelessWidget {
               width: 374,
               height: 48,
               decoration: BoxDecoration(
-                border: Border.all(color: const Color(0xFFD9D0E3)),
-                color: const Color(0xFFFFFFFF),
+                border: Border.all(color: AppStyles.violetColor3),
+                color: AppStyles.whiteBtnColor,
                 borderRadius: BorderRadius.circular(27),
               ),
               child: Row(
@@ -69,15 +63,8 @@ class Header extends StatelessWidget {
                   const SizedBox(
                     width: 290,
                     height: 24,
-                    child: Text(
-                      'Search',
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w400,
-                        letterSpacing: -0.41,
-                        color: Color(0xff9586a8),
-                      ),
-                    ),
+                    child: Text('Search',
+                        style: AppStyles.detailVioletTextStyle17),
                   ),
                 ],
               ),
