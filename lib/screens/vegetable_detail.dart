@@ -12,9 +12,7 @@ class VegetableDetailScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        height: 896,
+      body: DecoratedBox(
         decoration: const BoxDecoration(
           color: AppStyles.backgroundColor,
         ),
@@ -84,113 +82,97 @@ class VegetableDetailScreen extends ConsumerWidget {
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 16),
-                      child: Text(
-                        vegetable.name,
-                        style: AppStyles.detailTitleTextStyle30,
-                      ),
+                    Text(
+                      vegetable.name,
+                      style: AppStyles.detailTitleTextStyle30,
                     ),
-                    Container(
-                      margin: const EdgeInsets.fromLTRB(0, 0, 223, 8),
-                      width: double.infinity,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
-                            child: Text(
-                              vegetable.price.toString(),
-                              style: AppStyles.detailTextStyle22,
-                            ),
-                          ),
-                          Text(
-                            '€ / ${vegetable.unit.name}',
-                            textAlign: TextAlign.center,
-                            style: AppStyles.detailSubTextStyle24,
-                          ),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 32),
-                      child: const Text('~ 150 gr / piece',
-                          style: AppStyles.detailGreenTextStyle17),
-                    ),
-                    Container(
-                      // title3A7 (102:4859)
-                      margin: const EdgeInsets.fromLTRB(0, 0, 0, 18),
-                      child: const Text('Spain',
-                          style: AppStyles.detailTextStyle22),
-                    ),
-                    Container(
-                      // textAkX (102:4862)
-                      margin: const EdgeInsets.fromLTRB(1, 0, 0, 90),
-                      constraints: const BoxConstraints(
-                        maxWidth: 362,
-                      ),
-                      child: Text(vegetable.text,
-                          style: AppStyles.detailVioletTextStyle17),
-                    ),
-                    SizedBox(
-                      width: double.infinity,
-                      height: 56,
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                            width: 78,
-                            height: 56,
-                            child: OutlinedButton(
-                              onPressed: () {
-                                ref
-                                    .read(favoriteVegetablesProvider.notifier)
-                                    .toggleVegetableFavoriteStatus(vegetable);
-                              },
-                              style: OutlinedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  backgroundColor: AppStyles.whiteBtnColor),
-                              child: vegetable.isFavorite == false
-                                  ? SvgPicture.asset(
-                                      'assets/svg/heart.svg',
-                                      width: 20,
-                                      height: 20,
-                                    )
-                                  : SvgPicture.asset(
-                                      'assets/svg/favorite.svg',
-                                      width: 20,
-                                      height: 20,
-                                    ),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 275,
-                            height: 56,
-                            child: TextButton.icon(
-                              label: const Text(
-                                'ADD TO CART',
-                                style:
-                                    TextStyle(color: AppStyles.whiteBtnColor),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              margin: const EdgeInsets.fromLTRB(0, 0, 16, 0),
+                              child: Text(
+                                vegetable.price.toString(),
+                                style: AppStyles.detailTextStyle22,
                               ),
-                              icon: SvgPicture.asset(
-                                'assets/svg/shopping-cart.svg',
-                                width: 20,
-                                height: 20,
-                              ),
-                              onPressed: () {},
-                              style: OutlinedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  backgroundColor: AppStyles.greenBtnColor),
                             ),
+                            Text(
+                              '€ / ${vegetable.unit.name}',
+                              textAlign: TextAlign.center,
+                              style: AppStyles.detailSubTextStyle24,
+                            ),
+                          ],
+                        ),
+                        const Text('~ 150 gr / piece',
+                            style: AppStyles.detailGreenTextStyle17),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text('Spain', style: AppStyles.detailTextStyle22),
+                        Text(vegetable.text,
+                            style: AppStyles.detailVioletTextStyle17),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Container(
+                          margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
+                          width: 78,
+                          height: 56,
+                          child: OutlinedButton(
+                            onPressed: () {
+                              ref
+                                  .read(favoriteVegetablesProvider.notifier)
+                                  .toggleVegetableFavoriteStatus(vegetable);
+                            },
+                            style: OutlinedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                backgroundColor: AppStyles.whiteBtnColor),
+                            child: vegetable.isFavorite == false
+                                ? SvgPicture.asset(
+                                    'assets/svg/heart.svg',
+                                    width: 20,
+                                    height: 20,
+                                  )
+                                : SvgPicture.asset(
+                                    'assets/svg/favorite.svg',
+                                    width: 20,
+                                    height: 20,
+                                  ),
                           ),
-                        ],
-                      ),
+                        ),
+                        SizedBox(
+                          width: 275,
+                          height: 56,
+                          child: TextButton.icon(
+                            label: const Text(
+                              'ADD TO CART',
+                              style: TextStyle(color: AppStyles.whiteBtnColor),
+                            ),
+                            icon: SvgPicture.asset(
+                              'assets/svg/shopping-cart.svg',
+                              width: 20,
+                              height: 20,
+                            ),
+                            onPressed: () {},
+                            style: OutlinedButton.styleFrom(
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                                backgroundColor: AppStyles.greenBtnColor),
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

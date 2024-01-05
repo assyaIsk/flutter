@@ -26,7 +26,6 @@ class VegetableList extends ConsumerWidget {
             alignment: Alignment.topCenter,
             margin: const EdgeInsets.fromLTRB(0, 0, 0, 8),
             padding: const EdgeInsets.fromLTRB(20, 16, 0, 16),
-            width: double.infinity,
             height: 165,
             child:
                 Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
