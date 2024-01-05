@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vegetables/screens/home_screen.dart';
-import 'package:vegetables/screens/tabs.dart';
+import 'package:vegetables/widgets/tabs.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {

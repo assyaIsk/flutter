@@ -9,11 +9,11 @@ class Tabs extends ConsumerStatefulWidget {
 
   @override
   ConsumerState<Tabs> createState() {
-    return _Footer();
+    return _Tabs();
   }
 }
 
-class _Footer extends ConsumerState<Tabs> {
+class _Tabs extends ConsumerState<Tabs> {
   int _selectedPageIndex = 0;
 
   void _selectPage(int index) {
