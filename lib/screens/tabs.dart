@@ -36,19 +36,19 @@ class _Footer extends ConsumerState<Tabs> {
     return Scaffold(
       //appBar: AppBar(),
       body: activePage,
-      bottomNavigationBar: BottomNavigationBar(
-        onTap: _selectPage,
-        currentIndex: _selectedPageIndex,
-        items: const [
-          BottomNavigationBarItem(
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: _selectPage,
+        selectedIndex: _selectedPageIndex,
+        destinations: const [
+          NavigationDestination(
             icon: Icon(Icons.grid_view_rounded),
             label: 'Categories',
           ),
-          BottomNavigationBarItem(
+          NavigationDestination(
             icon: Icon(Icons.shopping_cart_outlined),
             label: 'Favorites',
           ),
-          BottomNavigationBarItem(
+          NavigationDestination(
             icon: Icon(Icons.account_circle_outlined),
             label: 'User',
           ),
