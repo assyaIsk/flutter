@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vegetables/models/categories_model.dart';
+import 'package:vegetables/models/subcategory_model.dart';
 import 'package:vegetables/styles/style.dart';
 
 class CategoryList extends StatefulWidget {
@@ -12,12 +12,17 @@ class CategoryList extends StatefulWidget {
 class _CategoryListState extends State<CategoryList> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 40, 0, 32),
-      child: Wrap(
-        spacing: 8.0,
-        runSpacing: 10.0,
-        children: categories.map((item) {
+    return SizedBox(
+      height: 100,
+      child: GridView(
+        scrollDirection: Axis.horizontal,
+        padding: const EdgeInsets.all(20),
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+            childAspectRatio: 1 / 3,
+            crossAxisSpacing: 10,
+            mainAxisSpacing: 8,
+            maxCrossAxisExtent: 100),
+        children: subcategories.map((item) {
           return FilterChip(
               onSelected: (bool value) {
                 setState(() {

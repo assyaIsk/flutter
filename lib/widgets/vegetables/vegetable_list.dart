@@ -2,10 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/data/vegetables.dart';
-import 'package:vegetables/providers/favorites_provider.dart';
 import 'package:vegetables/screens/vegetable_detail.dart';
 import 'package:vegetables/styles/style.dart';
-import 'dart:developer' as developer;
 
 class VegetableList extends ConsumerWidget {
   const VegetableList({
@@ -16,7 +14,6 @@ class VegetableList extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    developer.log("vegetables $vegetables");
     return Expanded(
       child: ListView.builder(
         padding: const EdgeInsets.only(top: 0),
@@ -73,7 +70,7 @@ class VegetableList extends ConsumerWidget {
                         children: [
                           Flexible(
                             child: Text(
-                              vegetables[index].price.toString(),
+                              vegetables[index].price.toStringAsFixed(2),
                               style: AppStyles.detailTextStyle22,
                             ),
                           ),
@@ -102,10 +99,10 @@ class VegetableList extends ConsumerWidget {
                             height: 40,
                             child: OutlinedButton(
                               onPressed: () {
-                                ref
-                                    .read(favoriteVegetablesProvider.notifier)
-                                    .toggleVegetableFavoriteStatus(
-                                        vegetables[index]);
+                                // ref
+                                //     .read(favoriteVegetablesProvider.notifier)
+                                //     .toggleVegetableFavoriteStatus(
+                                //         vegetables[index]);
                               },
                               style: OutlinedButton.styleFrom(
                                 shape: RoundedRectangleBorder(

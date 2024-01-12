@@ -1,29 +1,44 @@
 import '../data/category.dart';
 
-var categories = [
-  Category(
-    name: 'Сabbage and lettuce',
-    count: 14,
-    active: true,
+final categories = <Category>[
+  const Category(
+    name: 'Vegetables',
+    count: 43,
+    image: '',
   ),
-  Category(
-    name: 'Сucumbers and tomatoes',
-    count: 10,
-    active: false,
+  const Category(
+    name: 'Fruits',
+    count: 32,
+    image: '',
   ),
-  Category(
-    name: 'Oinons and garlic',
-    count: 8,
-    active: false,
+  const Category(
+    name: 'Bread',
+    count: 22,
+    image: '',
   ),
-  Category(
-    name: 'Peppers',
-    count: 7,
-    active: false,
+  const Category(
+    name: 'Sweets',
+    count: 56,
+    image: '',
   ),
-  Category(
-    name: 'Potatoes and carrots',
-    count: 4,
-    active: false,
+  const Category(
+    name: 'Pasta',
+    count: 43,
+    image: '',
+  ),
+  const Category(
+    name: 'Drinks',
+    count: 43,
+    image: '',
+  ),
+  const Category(
+    name: 'AAAA',
+    count: 43,
+    image: '',
+  ),
+  const Category(
+    name: 'BBBB',
+    count: 43,
+    image: '',
   )
 ];

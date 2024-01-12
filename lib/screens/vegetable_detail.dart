@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/data/vegetables.dart';
-import 'package:vegetables/providers/favorites_provider.dart';
 import 'package:vegetables/styles/style.dart';
 
 class VegetableDetailScreen extends ConsumerWidget {
@@ -129,9 +128,9 @@ class VegetableDetailScreen extends ConsumerWidget {
                           height: 56,
                           child: OutlinedButton(
                             onPressed: () {
-                              ref
-                                  .read(favoriteVegetablesProvider.notifier)
-                                  .toggleVegetableFavoriteStatus(vegetable);
+                              //   ref
+                              //       .read(favoriteVegetablesProvider.notifier)
+                              //       .toggleVegetableFavoriteStatus(vegetable);
                             },
                             style: OutlinedButton.styleFrom(
                                 shape: RoundedRectangleBorder(

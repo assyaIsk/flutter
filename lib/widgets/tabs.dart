@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:vegetables/providers/favorites_provider.dart';
+import 'package:vegetables/models/vegetable_model.dart';
+import 'package:vegetables/screens/category_screen.dart';
 import 'package:vegetables/screens/favorites_screen.dart';
 import 'package:vegetables/screens/vegetables_screen.dart';
+import 'package:vegetables/styles/style.dart';
 
 class Tabs extends ConsumerStatefulWidget {
   const Tabs({super.key});
@@ -27,14 +29,19 @@ class _Tabs extends ConsumerState<Tabs> {
     Widget activePage = const VegetablesScreen();
 
     if (_selectedPageIndex == 1) {
-      final favoriteVegetales = ref.watch(favoriteVegetablesProvider);
+      final favoriteVegetales = vegetables;
       activePage = FavoritesScreen(
         vegetables: favoriteVegetales,
       );
     }
 
+    if (_selectedPageIndex == 2) {
+      activePage = const CategoryScreen();
+    }
+
     return Scaffold(
       //appBar: AppBar(),
+      backgroundColor: AppStyles.backgroundColor,
       body: activePage,
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: _selectPage,

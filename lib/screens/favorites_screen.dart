@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vegetables/data/vegetables.dart';
+import 'package:vegetables/widgets/vegetables/header.dart';
 import 'package:vegetables/widgets/vegetables/vegetable_list.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -11,16 +12,14 @@ class FavoritesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text('Favorites'),
-        ),
-        body: Center(
-          //list of vegetables
-          child: vegetables.isEmpty
-              ? const Text('no favorites')
-              : VegetableList(vegetables: vegetables),
-        ));
+    return Column(children: [
+      const Header(screenName: 'Favorites', isFirstTab: false),
+      Expanded(
+        //list of vegetables
+        child: vegetables.isEmpty
+            ? const Text('no favorites')
+            : VegetableList(vegetables: vegetables),
+      )
+    ]);
   }
 }
