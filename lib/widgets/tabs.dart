@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:vegetables/models/vegetable_model.dart';
 import 'package:vegetables/screens/category_screen.dart';
 import 'package:vegetables/screens/favorites_screen.dart';
 import 'package:vegetables/screens/vegetables_screen.dart';
 import 'package:vegetables/styles/style.dart';
 
-class Tabs extends ConsumerStatefulWidget {
+class Tabs extends StatefulWidget {
   const Tabs({super.key});
 
   @override
-  ConsumerState<Tabs> createState() {
+  State<Tabs> createState() {
     return _Tabs();
   }
 }
 
-class _Tabs extends ConsumerState<Tabs> {
+class _Tabs extends State<Tabs> {
   int _selectedPageIndex = 0;
 
   void _selectPage(int index) {
