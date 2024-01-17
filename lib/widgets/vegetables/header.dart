@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/styles/style.dart';
+import 'package:vegetables/widgets/back_arrow.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key, required this.screenName, required this.isFirstTab});
@@ -72,26 +73,7 @@ class Header extends StatelessWidget {
                 ),
               ),
             ),
-          Positioned(
-            left: 0,
-            top: 0,
-            child: Container(
-              padding: const EdgeInsets.fromLTRB(21, 62, 387, 22),
-              width: 414,
-              height: 96,
-              child: Align(
-                alignment: Alignment.centerLeft,
-                child: GestureDetector(
-                  onTap: () => Navigator.pop(context),
-                  child: SvgPicture.asset(
-                    'assets/svg/Vector.svg',
-                    width: 6,
-                    height: 12,
-                  ),
-                ),
-              ),
-            ),
-          ),
+          const Positioned(left: 0, top: 0, child: BackArrow()),
         ],
       ),
     );

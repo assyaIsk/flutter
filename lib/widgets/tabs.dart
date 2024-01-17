@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:vegetables/models/vegetable_model.dart';
 import 'package:vegetables/screens/category_screen.dart';
 import 'package:vegetables/screens/favorites_screen.dart';
 import 'package:vegetables/screens/vegetables_screen.dart';
@@ -28,10 +27,7 @@ class _Tabs extends State<Tabs> {
     Widget activePage = const VegetablesScreen();
 
     if (_selectedPageIndex == 1) {
-      final favoriteVegetales = vegetables;
-      activePage = FavoritesScreen(
-        vegetables: favoriteVegetales,
-      );
+      activePage = const FavoritesScreen();
     }
 
     if (_selectedPageIndex == 2) {

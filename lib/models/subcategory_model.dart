@@ -1,6 +1,6 @@
 import '../data/subcategory.dart';
 
-var subcategories = [
+final subcategories = <SubCategory>[
   SubCategory(
     name: 'Сabbage and lettuce',
     count: 14,

@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/cubits/cubit/favorites_cubit.dart';
 import 'package:vegetables/data/vegetables.dart';
 import 'package:vegetables/styles/style.dart';
+import 'package:vegetables/widgets/back_arrow.dart';
 
 class VegetableDetailScreen extends StatelessWidget {
   const VegetableDetailScreen({super.key, required this.vegetable});
@@ -49,26 +50,7 @@ class VegetableDetailScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                Positioned(
-                  left: 0,
-                  top: 0,
-                  child: Container(
-                    padding: const EdgeInsets.fromLTRB(21, 62, 387, 22),
-                    width: 414,
-                    height: 96,
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: GestureDetector(
-                        onTap: () => Navigator.pop(context),
-                        child: SvgPicture.asset(
-                          'assets/svg/Vector.svg',
-                          width: 6,
-                          height: 12,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
+                const Positioned(left: 0, top: 0, child: BackArrow()),
                 Positioned(
                   left: 0,
                   top: 281,
@@ -151,7 +133,7 @@ class VegetableDetailScreen extends StatelessWidget {
                                             width: 20,
                                             height: 20,
                                           ),
-                                      favorite: (vegetable, isFavorite) =>
+                                      favorite: (veg, isFavorite) =>
                                           vegetable.isFavorite == false
                                               ? SvgPicture.asset(
                                                   'assets/svg/heart.svg',

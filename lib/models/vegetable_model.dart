@@ -1,6 +1,6 @@
 import 'package:vegetables/data/vegetables.dart';
 
-List<Vegetables> vegetables = [
+final vegetables = <Vegetables>[
   Vegetables(
       name: 'Boston Lettuce',
       price: 1.10,
