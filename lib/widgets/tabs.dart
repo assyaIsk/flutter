@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
 import 'package:vegetables/screens/category_screen.dart';
 import 'package:vegetables/screens/favorites_screen.dart';
 import 'package:vegetables/screens/vegetables_screen.dart';
@@ -15,29 +17,39 @@ class Tabs extends StatefulWidget {
 
 class _Tabs extends State<Tabs> {
   int _selectedPageIndex = 0;
+  bool categorySelected = false;
 
   void _selectPage(int index) {
     setState(() {
+      context.read<CategoryCubit>().unselectCategory();
       _selectedPageIndex = index;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    Widget activePage = const VegetablesScreen();
+    Widget activePage = const CategoryScreen();
 
     if (_selectedPageIndex == 1) {
       activePage = const FavoritesScreen();
     }
 
     if (_selectedPageIndex == 2) {
-      activePage = const CategoryScreen();
+      activePage = const Center(child: Text("Profile"));
     }
 
     return Scaffold(
       //appBar: AppBar(),
       backgroundColor: AppStyles.backgroundColor,
-      body: activePage,
+      body: BlocConsumer<CategoryCubit, CategoryState>(
+        listener: (context, state) {},
+        builder: (context, state) {
+          return state.when(
+              initial: () => activePage,
+              selectedCategory: () => const VegetablesScreen(),
+              unselectCategory: () => activePage);
+        },
+      ),
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: _selectPage,
         selectedIndex: _selectedPageIndex,

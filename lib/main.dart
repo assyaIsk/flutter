@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vegetables/cubits/cubit/favorites_cubit.dart';
+import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
 import 'package:vegetables/screens/home_screen.dart';
 import 'package:vegetables/widgets/tabs.dart';
 
@@ -15,8 +15,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider<FavoritesCubit>(
-      create: (context) => FavoritesCubit(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<FavoritesCubit>(
+          create: (context) => FavoritesCubit(),
+        ),
+        BlocProvider<CategoryCubit>(
+          create: (context) => CategoryCubit(),
+        ),
+        // Добавьте блоки по мере необходимости
+      ],
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(

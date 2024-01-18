@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:vegetables/cubits/cubit/favorites_cubit.dart';
+import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
 import 'package:vegetables/data/vegetables.dart';
 import 'package:vegetables/models/vegetable_model.dart';
 import 'package:vegetables/widgets/header/header.dart';
