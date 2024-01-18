@@ -1,7 +1,10 @@
-class SubCategory {
-  SubCategory({required this.name, required this.count, required this.active});
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'subcategory.freezed.dart';
 
-  final String name;
-  final int count;
-  bool active;
+@unfreezed
+class SubCategory with _$SubCategory {
+  factory SubCategory(
+      {required final String name,
+      required final int count,
+      @Default(false) bool active}) = _SubCategory;
 }

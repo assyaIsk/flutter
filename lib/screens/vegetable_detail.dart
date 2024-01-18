@@ -4,7 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/cubits/cubit/favorites_cubit.dart';
 import 'package:vegetables/data/vegetables.dart';
 import 'package:vegetables/styles/style.dart';
-import 'package:vegetables/widgets/back_arrow.dart';
+import 'package:vegetables/widgets/header/back_arrow.dart';
 
 class VegetableDetailScreen extends StatelessWidget {
   const VegetableDetailScreen({super.key, required this.vegetable});

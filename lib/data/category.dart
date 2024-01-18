@@ -1,11 +1,11 @@
-class Category {
-  const Category({
-    required this.name,
-    required this.count,
-    required this.image,
-  });
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'category.freezed.dart';
 
-  final String name;
-  final int count;
-  final String image;
+@freezed
+class Category with _$Category {
+  const factory Category({
+    required String name,
+    required int count,
+    required String image,
+  }) = _Category;
 }

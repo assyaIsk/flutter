@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/styles/style.dart';
-import 'package:vegetables/widgets/back_arrow.dart';
+import 'package:vegetables/widgets/header/back_arrow.dart';
 
 class Header extends StatelessWidget {
   const Header({super.key, required this.screenName, required this.isFirstTab});

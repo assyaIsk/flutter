@@ -183,6 +183,8 @@ abstract class _$$FavoriteImplCopyWith<$Res> {
       __$$FavoriteImplCopyWithImpl<$Res>;
   @useResult
   $Res call({Vegetables vegetable, bool isFavorite});
+
+  $VegetablesCopyWith<$Res> get vegetable;
 }
 
 /// @nodoc
@@ -209,6 +211,14 @@ class __$$FavoriteImplCopyWithImpl<$Res>
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $VegetablesCopyWith<$Res> get vegetable {
+    return $VegetablesCopyWith<$Res>(_value.vegetable, (value) {
+      return _then(_value.copyWith(vegetable: value));
+    });
   }
 }
 

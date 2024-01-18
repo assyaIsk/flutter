@@ -1,18 +1,15 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+part 'vegetables.freezed.dart';
+
 enum Units { piece, kg }
 
-class Vegetables {
-  Vegetables(
-      {required this.name,
-      required this.price,
-      required this.unit,
-      required this.imageUrl,
-      required this.text,
-      required this.isFavorite});
-
-  final String name;
-  final double price;
-  final Units unit;
-  final String imageUrl;
-  final String text;
-  bool isFavorite;
+@unfreezed
+class Vegetables with _$Vegetables {
+  factory Vegetables(
+      {required final String name,
+      required final double price,
+      required final Units unit,
+      required final String imageUrl,
+      required final String text,
+      @Default(false) bool isFavorite}) = _Vegetables;
 }

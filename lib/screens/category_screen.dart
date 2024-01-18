@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vegetables/models/categories_model.dart';
-import 'package:vegetables/widgets/vegetables/header.dart';
+import 'package:vegetables/widgets/header/header.dart';
 
-import '../widgets/category_item.dart';
+import '../widgets/categories/category_item.dart';
 
 class CategoryScreen extends StatelessWidget {
   const CategoryScreen({super.key});

@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vegetables/cubits/cubit/favorites_cubit.dart';
 import 'package:vegetables/data/vegetables.dart';
 import 'package:vegetables/models/vegetable_model.dart';
-import 'package:vegetables/widgets/vegetables/header.dart';
+import 'package:vegetables/widgets/header/header.dart';
 import 'package:vegetables/widgets/vegetables/vegetable_list.dart';
 
 class FavoritesScreen extends StatelessWidget {

@@ -23,4 +23,11 @@ final vegetables = <Vegetables>[
       imageUrl: 'assets/images/Media3.png',
       isFavorite: false,
       text: 'Savoy Cabbage'),
+  Vegetables(
+      name: 'Boston Cabbage',
+      price: 1.00,
+      unit: Units.kg,
+      imageUrl: 'assets/images/Media3.png',
+      isFavorite: false,
+      text: 'Boston Cabbage'),
 ];
