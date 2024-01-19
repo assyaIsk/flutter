@@ -25,3 +25,11 @@ class CategoryCubit extends Cubit<CategoryState> {
     emit(const CategoryState.unselectCategory());
   }
 }
+
+class SearchCubit extends Cubit<SearchState> {
+  SearchCubit() : super(const SearchState.initial());
+
+  void search(String value) {
+    emit(SearchState.search(value));
+  }
+}

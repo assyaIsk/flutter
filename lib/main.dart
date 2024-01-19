@@ -23,6 +23,9 @@ class MyApp extends StatelessWidget {
         BlocProvider<CategoryCubit>(
           create: (context) => CategoryCubit(),
         ),
+        BlocProvider<SearchCubit>(
+          create: (context) => SearchCubit(),
+        ),
         // Добавьте блоки по мере необходимости
       ],
       child: MaterialApp(
