@@ -117,7 +117,7 @@ class VegetableList extends StatelessWidget {
                                                     )
                                                   : SvgPicture.asset(
                                                       'assets/svg/favorite.svg',
-                                                    ))),
+                                                      color: Colors.red))),
                                 ),
                                 SizedBox(
                                   width: quarterWidth,

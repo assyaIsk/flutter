@@ -130,21 +130,15 @@ class VegetableDetailScreen extends StatelessWidget {
                                   child: state.when(
                                       initial: () => SvgPicture.asset(
                                             'assets/svg/heart.svg',
-                                            width: 20,
-                                            height: 20,
                                           ),
                                       favorite: (veg, isFavorite) =>
                                           vegetable.isFavorite == false
                                               ? SvgPicture.asset(
                                                   'assets/svg/heart.svg',
-                                                  width: 20,
-                                                  height: 20,
                                                 )
                                               : SvgPicture.asset(
                                                   'assets/svg/favorite.svg',
-                                                  width: 20,
-                                                  height: 20,
-                                                ))),
+                                                  color: Colors.red))),
                             ),
                             SizedBox(
                               width: 275,
@@ -157,8 +151,6 @@ class VegetableDetailScreen extends StatelessWidget {
                                 ),
                                 icon: SvgPicture.asset(
                                   'assets/svg/shopping-cart.svg',
-                                  width: 20,
-                                  height: 20,
                                 ),
                                 onPressed: () {},
                                 style: OutlinedButton.styleFrom(
