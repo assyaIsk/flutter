@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
 import 'package:vegetables/screens/category_screen.dart';
 import 'package:vegetables/screens/favorites_screen.dart';
+import 'package:vegetables/screens/profile.dart';
 import 'package:vegetables/screens/vegetables_screen.dart';
 import 'package:vegetables/styles/style.dart';
 
@@ -35,7 +36,7 @@ class _Tabs extends State<Tabs> {
     }
 
     if (_selectedPageIndex == 2) {
-      activePage = const Center(child: Text("Profile"));
+      activePage = const Center(child: ProfileScreen());
     }
 
     return Scaffold(
