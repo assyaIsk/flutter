@@ -10,26 +10,24 @@ class Header extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 215,
-      child: Stack(
-        children: [
-          Align(
-            alignment: Alignment.topRight,
-            child: SvgPicture.asset(
-              'assets/svg/vegetables.svg',
+    return Stack(
+      children: [
+        Align(
+          alignment: Alignment.topRight,
+          child: SvgPicture.asset(
+            'assets/svg/vegetables.svg',
+          ),
+        ),
+        Column(
+          children: [
+            const BackArrow(),
+            Text(
+              screenName,
+              style: AppStyles.detailTitleTextStyle30,
+              textAlign: TextAlign.start,
             ),
-          ),
-          Positioned(
-            left: 20,
-            top: 97,
-            child: Text(screenName, style: AppStyles.detailTitleTextStyle30),
-          ),
-          if (isFirstTab)
-            Positioned(
-              left: 20,
-              top: 165,
-              child: Container(
+            if (isFirstTab)
+              Container(
                 width: MediaQuery.of(context).size.width - 40,
                 padding: const EdgeInsets.fromLTRB(22, 12, 22, 12),
                 decoration: BoxDecoration(
@@ -47,10 +45,10 @@ class Header extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
-          const Positioned(left: 0, top: 0, child: BackArrow()),
-        ],
-      ),
+            const SizedBox(height: 20)
+          ],
+        ),
+      ],
     );
   }
 }

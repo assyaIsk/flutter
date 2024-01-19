@@ -8,8 +8,6 @@ class BackArrow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(21, 42, 367, 22),
-      width: 414,
-      height: 96,
       child: Align(
         alignment: Alignment.centerLeft,
         child: GestureDetector(
