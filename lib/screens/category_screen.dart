@@ -53,6 +53,7 @@ class MyGridWidget extends StatelessWidget {
               child: CategoryItem(category: item),
               onTap: () => {
                 context.read<CategoryCubit>().selectCategory(),
+                context.read<SearchCubit>().resetSearch()
               },
             );
           },

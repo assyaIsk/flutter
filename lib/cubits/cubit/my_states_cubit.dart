@@ -32,4 +32,8 @@ class SearchCubit extends Cubit<SearchState> {
   void search(String value) {
     emit(SearchState.search(value));
   }
+
+  void resetSearch() {
+    emit(const SearchState.search(''));
+  }
 }

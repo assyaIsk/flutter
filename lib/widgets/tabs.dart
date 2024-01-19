@@ -23,6 +23,7 @@ class _Tabs extends State<Tabs> {
   void _selectPage(int index) {
     setState(() {
       context.read<CategoryCubit>().unselectCategory();
+      context.read<SearchCubit>().resetSearch();
       _selectedPageIndex = index;
     });
   }
