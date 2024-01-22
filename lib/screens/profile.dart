@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vegetables/models/subcategory_model.dart';
-import 'package:vegetables/models/vegetable_model.dart';
+import 'package:vegetables/data/subcategory_data.dart';
+import 'package:vegetables/data/vegetable_data.dart';
 import 'package:vegetables/styles/style.dart';
 import 'package:vegetables/widgets/header/header.dart';
 

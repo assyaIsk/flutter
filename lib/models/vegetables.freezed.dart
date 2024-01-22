@@ -15,7 +15,7 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$Vegetables {
+mixin _$VegetablesModel {
   String get name => throw _privateConstructorUsedError;
   double get price => throw _privateConstructorUsedError;
   Units get unit => throw _privateConstructorUsedError;
@@ -25,15 +25,15 @@ mixin _$Vegetables {
   set isFavorite(bool value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $VegetablesCopyWith<Vegetables> get copyWith =>
+  $VegetablesModelCopyWith<VegetablesModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $VegetablesCopyWith<$Res> {
-  factory $VegetablesCopyWith(
-          Vegetables value, $Res Function(Vegetables) then) =
-      _$VegetablesCopyWithImpl<$Res, Vegetables>;
+abstract class $VegetablesModelCopyWith<$Res> {
+  factory $VegetablesModelCopyWith(
+          VegetablesModel value, $Res Function(VegetablesModel) then) =
+      _$VegetablesModelCopyWithImpl<$Res, VegetablesModel>;
   @useResult
   $Res call(
       {String name,
@@ -45,9 +45,9 @@ abstract class $VegetablesCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$VegetablesCopyWithImpl<$Res, $Val extends Vegetables>
-    implements $VegetablesCopyWith<$Res> {
-  _$VegetablesCopyWithImpl(this._value, this._then);
+class _$VegetablesModelCopyWithImpl<$Res, $Val extends VegetablesModel>
+    implements $VegetablesModelCopyWith<$Res> {
+  _$VegetablesModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -94,11 +94,11 @@ class _$VegetablesCopyWithImpl<$Res, $Val extends Vegetables>
 }
 
 /// @nodoc
-abstract class _$$VegetablesImplCopyWith<$Res>
-    implements $VegetablesCopyWith<$Res> {
-  factory _$$VegetablesImplCopyWith(
-          _$VegetablesImpl value, $Res Function(_$VegetablesImpl) then) =
-      __$$VegetablesImplCopyWithImpl<$Res>;
+abstract class _$$VegetablesModelImplCopyWith<$Res>
+    implements $VegetablesModelCopyWith<$Res> {
+  factory _$$VegetablesModelImplCopyWith(_$VegetablesModelImpl value,
+          $Res Function(_$VegetablesModelImpl) then) =
+      __$$VegetablesModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -111,11 +111,11 @@ abstract class _$$VegetablesImplCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$VegetablesImplCopyWithImpl<$Res>
-    extends _$VegetablesCopyWithImpl<$Res, _$VegetablesImpl>
-    implements _$$VegetablesImplCopyWith<$Res> {
-  __$$VegetablesImplCopyWithImpl(
-      _$VegetablesImpl _value, $Res Function(_$VegetablesImpl) _then)
+class __$$VegetablesModelImplCopyWithImpl<$Res>
+    extends _$VegetablesModelCopyWithImpl<$Res, _$VegetablesModelImpl>
+    implements _$$VegetablesModelImplCopyWith<$Res> {
+  __$$VegetablesModelImplCopyWithImpl(
+      _$VegetablesModelImpl _value, $Res Function(_$VegetablesModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -128,7 +128,7 @@ class __$$VegetablesImplCopyWithImpl<$Res>
     Object? text = null,
     Object? isFavorite = null,
   }) {
-    return _then(_$VegetablesImpl(
+    return _then(_$VegetablesModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -159,8 +159,8 @@ class __$$VegetablesImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$VegetablesImpl implements _Vegetables {
-  _$VegetablesImpl(
+class _$VegetablesModelImpl implements _VegetablesModel {
+  _$VegetablesModelImpl(
       {required this.name,
       required this.price,
       required this.unit,
@@ -184,24 +184,25 @@ class _$VegetablesImpl implements _Vegetables {
 
   @override
   String toString() {
-    return 'Vegetables(name: $name, price: $price, unit: $unit, imageUrl: $imageUrl, text: $text, isFavorite: $isFavorite)';
+    return 'VegetablesModel(name: $name, price: $price, unit: $unit, imageUrl: $imageUrl, text: $text, isFavorite: $isFavorite)';
   }
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$VegetablesImplCopyWith<_$VegetablesImpl> get copyWith =>
-      __$$VegetablesImplCopyWithImpl<_$VegetablesImpl>(this, _$identity);
+  _$$VegetablesModelImplCopyWith<_$VegetablesModelImpl> get copyWith =>
+      __$$VegetablesModelImplCopyWithImpl<_$VegetablesModelImpl>(
+          this, _$identity);
 }
 
-abstract class _Vegetables implements Vegetables {
-  factory _Vegetables(
+abstract class _VegetablesModel implements VegetablesModel {
+  factory _VegetablesModel(
       {required final String name,
       required final double price,
       required final Units unit,
       required final String imageUrl,
       required final String text,
-      bool isFavorite}) = _$VegetablesImpl;
+      bool isFavorite}) = _$VegetablesModelImpl;
 
   @override
   String get name;
@@ -218,6 +219,6 @@ abstract class _Vegetables implements Vegetables {
   set isFavorite(bool value);
   @override
   @JsonKey(ignore: true)
-  _$$VegetablesImplCopyWith<_$VegetablesImpl> get copyWith =>
+  _$$VegetablesModelImplCopyWith<_$VegetablesModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

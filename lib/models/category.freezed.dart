@@ -15,28 +15,29 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$Category {
+mixin _$CategoryModel {
   String get name => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
   String get image => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $CategoryCopyWith<Category> get copyWith =>
+  $CategoryModelCopyWith<CategoryModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $CategoryCopyWith<$Res> {
-  factory $CategoryCopyWith(Category value, $Res Function(Category) then) =
-      _$CategoryCopyWithImpl<$Res, Category>;
+abstract class $CategoryModelCopyWith<$Res> {
+  factory $CategoryModelCopyWith(
+          CategoryModel value, $Res Function(CategoryModel) then) =
+      _$CategoryModelCopyWithImpl<$Res, CategoryModel>;
   @useResult
   $Res call({String name, int count, String image});
 }
 
 /// @nodoc
-class _$CategoryCopyWithImpl<$Res, $Val extends Category>
-    implements $CategoryCopyWith<$Res> {
-  _$CategoryCopyWithImpl(this._value, this._then);
+class _$CategoryModelCopyWithImpl<$Res, $Val extends CategoryModel>
+    implements $CategoryModelCopyWith<$Res> {
+  _$CategoryModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -68,22 +69,22 @@ class _$CategoryCopyWithImpl<$Res, $Val extends Category>
 }
 
 /// @nodoc
-abstract class _$$CategoryImplCopyWith<$Res>
-    implements $CategoryCopyWith<$Res> {
-  factory _$$CategoryImplCopyWith(
-          _$CategoryImpl value, $Res Function(_$CategoryImpl) then) =
-      __$$CategoryImplCopyWithImpl<$Res>;
+abstract class _$$CategoryModelImplCopyWith<$Res>
+    implements $CategoryModelCopyWith<$Res> {
+  factory _$$CategoryModelImplCopyWith(
+          _$CategoryModelImpl value, $Res Function(_$CategoryModelImpl) then) =
+      __$$CategoryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, int count, String image});
 }
 
 /// @nodoc
-class __$$CategoryImplCopyWithImpl<$Res>
-    extends _$CategoryCopyWithImpl<$Res, _$CategoryImpl>
-    implements _$$CategoryImplCopyWith<$Res> {
-  __$$CategoryImplCopyWithImpl(
-      _$CategoryImpl _value, $Res Function(_$CategoryImpl) _then)
+class __$$CategoryModelImplCopyWithImpl<$Res>
+    extends _$CategoryModelCopyWithImpl<$Res, _$CategoryModelImpl>
+    implements _$$CategoryModelImplCopyWith<$Res> {
+  __$$CategoryModelImplCopyWithImpl(
+      _$CategoryModelImpl _value, $Res Function(_$CategoryModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -93,7 +94,7 @@ class __$$CategoryImplCopyWithImpl<$Res>
     Object? count = null,
     Object? image = null,
   }) {
-    return _then(_$CategoryImpl(
+    return _then(_$CategoryModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -112,8 +113,8 @@ class __$$CategoryImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$CategoryImpl implements _Category {
-  const _$CategoryImpl(
+class _$CategoryModelImpl implements _CategoryModel {
+  const _$CategoryModelImpl(
       {required this.name, required this.count, required this.image});
 
   @override
@@ -125,14 +126,14 @@ class _$CategoryImpl implements _Category {
 
   @override
   String toString() {
-    return 'Category(name: $name, count: $count, image: $image)';
+    return 'CategoryModel(name: $name, count: $count, image: $image)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$CategoryImpl &&
+            other is _$CategoryModelImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.count, count) || other.count == count) &&
             (identical(other.image, image) || other.image == image));
@@ -144,15 +145,15 @@ class _$CategoryImpl implements _Category {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
-      __$$CategoryImplCopyWithImpl<_$CategoryImpl>(this, _$identity);
+  _$$CategoryModelImplCopyWith<_$CategoryModelImpl> get copyWith =>
+      __$$CategoryModelImplCopyWithImpl<_$CategoryModelImpl>(this, _$identity);
 }
 
-abstract class _Category implements Category {
-  const factory _Category(
+abstract class _CategoryModel implements CategoryModel {
+  const factory _CategoryModel(
       {required final String name,
       required final int count,
-      required final String image}) = _$CategoryImpl;
+      required final String image}) = _$CategoryModelImpl;
 
   @override
   String get name;
@@ -162,6 +163,6 @@ abstract class _Category implements Category {
   String get image;
   @override
   @JsonKey(ignore: true)
-  _$$CategoryImplCopyWith<_$CategoryImpl> get copyWith =>
+  _$$CategoryModelImplCopyWith<_$CategoryModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -15,30 +15,30 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-mixin _$SubCategory {
+mixin _$SubCategoryModel {
   String get name => throw _privateConstructorUsedError;
   int get count => throw _privateConstructorUsedError;
   bool get active => throw _privateConstructorUsedError;
   set active(bool value) => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SubCategoryCopyWith<SubCategory> get copyWith =>
+  $SubCategoryModelCopyWith<SubCategoryModel> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $SubCategoryCopyWith<$Res> {
-  factory $SubCategoryCopyWith(
-          SubCategory value, $Res Function(SubCategory) then) =
-      _$SubCategoryCopyWithImpl<$Res, SubCategory>;
+abstract class $SubCategoryModelCopyWith<$Res> {
+  factory $SubCategoryModelCopyWith(
+          SubCategoryModel value, $Res Function(SubCategoryModel) then) =
+      _$SubCategoryModelCopyWithImpl<$Res, SubCategoryModel>;
   @useResult
   $Res call({String name, int count, bool active});
 }
 
 /// @nodoc
-class _$SubCategoryCopyWithImpl<$Res, $Val extends SubCategory>
-    implements $SubCategoryCopyWith<$Res> {
-  _$SubCategoryCopyWithImpl(this._value, this._then);
+class _$SubCategoryModelCopyWithImpl<$Res, $Val extends SubCategoryModel>
+    implements $SubCategoryModelCopyWith<$Res> {
+  _$SubCategoryModelCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -70,22 +70,22 @@ class _$SubCategoryCopyWithImpl<$Res, $Val extends SubCategory>
 }
 
 /// @nodoc
-abstract class _$$SubCategoryImplCopyWith<$Res>
-    implements $SubCategoryCopyWith<$Res> {
-  factory _$$SubCategoryImplCopyWith(
-          _$SubCategoryImpl value, $Res Function(_$SubCategoryImpl) then) =
-      __$$SubCategoryImplCopyWithImpl<$Res>;
+abstract class _$$SubCategoryModelImplCopyWith<$Res>
+    implements $SubCategoryModelCopyWith<$Res> {
+  factory _$$SubCategoryModelImplCopyWith(_$SubCategoryModelImpl value,
+          $Res Function(_$SubCategoryModelImpl) then) =
+      __$$SubCategoryModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String name, int count, bool active});
 }
 
 /// @nodoc
-class __$$SubCategoryImplCopyWithImpl<$Res>
-    extends _$SubCategoryCopyWithImpl<$Res, _$SubCategoryImpl>
-    implements _$$SubCategoryImplCopyWith<$Res> {
-  __$$SubCategoryImplCopyWithImpl(
-      _$SubCategoryImpl _value, $Res Function(_$SubCategoryImpl) _then)
+class __$$SubCategoryModelImplCopyWithImpl<$Res>
+    extends _$SubCategoryModelCopyWithImpl<$Res, _$SubCategoryModelImpl>
+    implements _$$SubCategoryModelImplCopyWith<$Res> {
+  __$$SubCategoryModelImplCopyWithImpl(_$SubCategoryModelImpl _value,
+      $Res Function(_$SubCategoryModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -95,7 +95,7 @@ class __$$SubCategoryImplCopyWithImpl<$Res>
     Object? count = null,
     Object? active = null,
   }) {
-    return _then(_$SubCategoryImpl(
+    return _then(_$SubCategoryModelImpl(
       name: null == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -114,8 +114,8 @@ class __$$SubCategoryImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SubCategoryImpl implements _SubCategory {
-  _$SubCategoryImpl(
+class _$SubCategoryModelImpl implements _SubCategoryModel {
+  _$SubCategoryModelImpl(
       {required this.name, required this.count, this.active = false});
 
   @override
@@ -128,21 +128,22 @@ class _$SubCategoryImpl implements _SubCategory {
 
   @override
   String toString() {
-    return 'SubCategory(name: $name, count: $count, active: $active)';
+    return 'SubCategoryModel(name: $name, count: $count, active: $active)';
   }
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SubCategoryImplCopyWith<_$SubCategoryImpl> get copyWith =>
-      __$$SubCategoryImplCopyWithImpl<_$SubCategoryImpl>(this, _$identity);
+  _$$SubCategoryModelImplCopyWith<_$SubCategoryModelImpl> get copyWith =>
+      __$$SubCategoryModelImplCopyWithImpl<_$SubCategoryModelImpl>(
+          this, _$identity);
 }
 
-abstract class _SubCategory implements SubCategory {
-  factory _SubCategory(
+abstract class _SubCategoryModel implements SubCategoryModel {
+  factory _SubCategoryModel(
       {required final String name,
       required final int count,
-      bool active}) = _$SubCategoryImpl;
+      bool active}) = _$SubCategoryModelImpl;
 
   @override
   String get name;
@@ -153,6 +154,6 @@ abstract class _SubCategory implements SubCategory {
   set active(bool value);
   @override
   @JsonKey(ignore: true)
-  _$$SubCategoryImplCopyWith<_$SubCategoryImpl> get copyWith =>
+  _$$SubCategoryModelImplCopyWith<_$SubCategoryModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
-import 'package:vegetables/data/vegetables.dart';
-import 'package:vegetables/models/vegetable_model.dart';
+import 'package:vegetables/data/vegetable_data.dart';
+import 'package:vegetables/models/vegetables.dart';
 import 'package:vegetables/widgets/header/header.dart';
 import 'package:vegetables/widgets/vegetables/vegetable_list.dart';
 
@@ -15,7 +15,7 @@ class FavoritesScreen extends StatelessWidget {
       return vegetables.where((e) => e.isFavorite).toList();
     }
 
-    final List<Vegetables> favoriteList = checkfavorites();
+    final List<VegetablesModel> favoriteList = checkfavorites();
 
     return BlocConsumer<FavoritesCubit, FavoritesState>(
       listener: (context, state) {},

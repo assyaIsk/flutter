@@ -1,27 +1,27 @@
-import '../data/subcategory.dart';
+import 'package:vegetables/models/subcategory.dart';
 
-final subcategories = <SubCategory>[
-  SubCategory(
+final subcategories = <SubCategoryModel>[
+  SubCategoryModel(
     name: 'Сabbage and lettuce',
     count: 14,
     active: true,
   ),
-  SubCategory(
+  SubCategoryModel(
     name: 'Сucumbers and tomatoes',
     count: 10,
     active: false,
   ),
-  SubCategory(
+  SubCategoryModel(
     name: 'Oinons and garlic',
     count: 8,
     active: false,
   ),
-  SubCategory(
+  SubCategoryModel(
     name: 'Peppers',
     count: 7,
     active: false,
   ),
-  SubCategory(
+  SubCategoryModel(
     name: 'Potatoes and carrots',
     count: 4,
     active: false,

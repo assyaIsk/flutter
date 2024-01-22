@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
-import 'package:vegetables/data/vegetables.dart';
+import 'package:vegetables/models/vegetables.dart';
 import 'package:vegetables/styles/style.dart';
 import 'package:vegetables/widgets/header/back_arrow.dart';
 
 class VegetableDetailScreen extends StatelessWidget {
   const VegetableDetailScreen({super.key, required this.vegetable});
-  final Vegetables vegetable;
+  final VegetablesModel vegetable;
 
   @override
   Widget build(BuildContext context) {

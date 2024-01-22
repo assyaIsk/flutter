@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
-import 'package:vegetables/data/vegetables.dart';
+import 'package:vegetables/models/vegetables.dart';
 import 'package:vegetables/screens/vegetable_detail.dart';
 import 'package:vegetables/styles/style.dart';
 
 class VegetableList extends StatelessWidget {
   const VegetableList({
     super.key,
-    required List<Vegetables>? vegetables,
+    required List<VegetablesModel>? vegetables,
   }) : vegetables = vegetables ?? const [];
-  final List<Vegetables> vegetables;
+  final List<VegetablesModel> vegetables;
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class VegetablesListWidget extends StatelessWidget {
     required this.quarterWidth,
   });
 
-  final List<Vegetables> vegetables;
+  final List<VegetablesModel> vegetables;
   final double halfWidth;
   final double quarterWidth;
 

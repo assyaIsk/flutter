@@ -19,19 +19,20 @@ mixin _$FavoritesState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Vegetables vegetable, bool isFavorite) favorite,
+    required TResult Function(VegetablesModel vegetable, bool isFavorite)
+        favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(Vegetables vegetable, bool isFavorite)? favorite,
+    TResult? Function(VegetablesModel vegetable, bool isFavorite)? favorite,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Vegetables vegetable, bool isFavorite)? favorite,
+    TResult Function(VegetablesModel vegetable, bool isFavorite)? favorite,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -113,7 +114,8 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Vegetables vegetable, bool isFavorite) favorite,
+    required TResult Function(VegetablesModel vegetable, bool isFavorite)
+        favorite,
   }) {
     return initial();
   }
@@ -122,7 +124,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(Vegetables vegetable, bool isFavorite)? favorite,
+    TResult? Function(VegetablesModel vegetable, bool isFavorite)? favorite,
   }) {
     return initial?.call();
   }
@@ -131,7 +133,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Vegetables vegetable, bool isFavorite)? favorite,
+    TResult Function(VegetablesModel vegetable, bool isFavorite)? favorite,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -182,9 +184,9 @@ abstract class _$$FavoriteImplCopyWith<$Res> {
           _$FavoriteImpl value, $Res Function(_$FavoriteImpl) then) =
       __$$FavoriteImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({Vegetables vegetable, bool isFavorite});
+  $Res call({VegetablesModel vegetable, bool isFavorite});
 
-  $VegetablesCopyWith<$Res> get vegetable;
+  $VegetablesModelCopyWith<$Res> get vegetable;
 }
 
 /// @nodoc
@@ -205,7 +207,7 @@ class __$$FavoriteImplCopyWithImpl<$Res>
       null == vegetable
           ? _value.vegetable
           : vegetable // ignore: cast_nullable_to_non_nullable
-              as Vegetables,
+              as VegetablesModel,
       null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
@@ -215,8 +217,8 @@ class __$$FavoriteImplCopyWithImpl<$Res>
 
   @override
   @pragma('vm:prefer-inline')
-  $VegetablesCopyWith<$Res> get vegetable {
-    return $VegetablesCopyWith<$Res>(_value.vegetable, (value) {
+  $VegetablesModelCopyWith<$Res> get vegetable {
+    return $VegetablesModelCopyWith<$Res>(_value.vegetable, (value) {
       return _then(_value.copyWith(vegetable: value));
     });
   }
@@ -228,7 +230,7 @@ class _$FavoriteImpl implements _Favorite {
   const _$FavoriteImpl(this.vegetable, this.isFavorite);
 
   @override
-  final Vegetables vegetable;
+  final VegetablesModel vegetable;
   @override
   final bool isFavorite;
 
@@ -261,7 +263,8 @@ class _$FavoriteImpl implements _Favorite {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(Vegetables vegetable, bool isFavorite) favorite,
+    required TResult Function(VegetablesModel vegetable, bool isFavorite)
+        favorite,
   }) {
     return favorite(vegetable, isFavorite);
   }
@@ -270,7 +273,7 @@ class _$FavoriteImpl implements _Favorite {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(Vegetables vegetable, bool isFavorite)? favorite,
+    TResult? Function(VegetablesModel vegetable, bool isFavorite)? favorite,
   }) {
     return favorite?.call(vegetable, isFavorite);
   }
@@ -279,7 +282,7 @@ class _$FavoriteImpl implements _Favorite {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(Vegetables vegetable, bool isFavorite)? favorite,
+    TResult Function(VegetablesModel vegetable, bool isFavorite)? favorite,
     required TResult orElse(),
   }) {
     if (favorite != null) {
@@ -321,10 +324,10 @@ class _$FavoriteImpl implements _Favorite {
 }
 
 abstract class _Favorite implements FavoritesState {
-  const factory _Favorite(final Vegetables vegetable, final bool isFavorite) =
-      _$FavoriteImpl;
+  const factory _Favorite(
+      final VegetablesModel vegetable, final bool isFavorite) = _$FavoriteImpl;
 
-  Vegetables get vegetable;
+  VegetablesModel get vegetable;
   bool get isFavorite;
   @JsonKey(ignore: true)
   _$$FavoriteImplCopyWith<_$FavoriteImpl> get copyWith =>
