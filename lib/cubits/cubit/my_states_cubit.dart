@@ -1,5 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:vegetables/data/vegetable_data.dart';
 import 'package:vegetables/models/vegetables.dart';
 
 part 'my_states_state.dart';
@@ -11,6 +12,10 @@ class FavoritesCubit extends Cubit<FavoritesState> {
   void clickFavorite(VegetablesModel vegetable, bool isVegetable) {
     vegetable.isFavorite = !vegetable.isFavorite;
     emit(FavoritesState.favorite(vegetable, isVegetable));
+  }
+
+  checkfavorites() {
+    return vegetables.where((e) => e.isFavorite).toList();
   }
 }
 

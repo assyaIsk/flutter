@@ -10,19 +10,17 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<SearchCubit, SearchState>(
-      listener: (context, state) {},
+    String searchText = '';
+    return BlocBuilder<SearchCubit, SearchState>(
       builder: (context, state) {
+        state.when(
+          initial: () => searchText = '',
+          search: (value) => searchText = value,
+        );
         return Column(
           children: [
             const Header(screenName: 'Categories', isFirstTab: true),
-            Expanded(
-                child: state.when(
-              initial: () => const MyGridWidget(
-                searchText: '',
-              ),
-              search: (value) => MyGridWidget(searchText: value),
-            )),
+            Expanded(child: MyGridWidget(searchText: searchText)),
           ],
         );
       },
@@ -46,8 +44,7 @@ class MyGridWidget extends StatelessWidget {
       children: categories
           .where((e) => e.name.toUpperCase().contains(searchText.toUpperCase()))
           .map((item) {
-        return BlocConsumer<CategoryCubit, CategoryState>(
-          listener: (context, state) {},
+        return BlocBuilder<CategoryCubit, CategoryState>(
           builder: (context, state) {
             return GestureDetector(
               child: CategoryItem(category: item),

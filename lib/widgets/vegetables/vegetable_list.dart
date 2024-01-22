@@ -5,6 +5,7 @@ import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
 import 'package:vegetables/models/vegetables.dart';
 import 'package:vegetables/screens/vegetable_detail.dart';
 import 'package:vegetables/styles/style.dart';
+import 'package:vegetables/widgets/vegetables/fav_button.dart';
 
 class VegetableList extends StatelessWidget {
   const VegetableList({
@@ -17,8 +18,7 @@ class VegetableList extends StatelessWidget {
   Widget build(BuildContext context) {
     final halfWidth = MediaQuery.of(context).size.width / 2 - 20;
     final quarterWidth = halfWidth / 2 - 20;
-    return BlocConsumer<SearchCubit, SearchState>(
-      listener: (context, state) {},
+    return BlocBuilder<SearchCubit, SearchState>(
       builder: (context, state) {
         return Expanded(
             child: state.when(
@@ -111,61 +111,30 @@ class VegetablesListWidget extends StatelessWidget {
                   const SizedBox(
                     height: 8,
                   ),
-                  BlocConsumer<FavoritesCubit, FavoritesState>(
-                    listener: (context, state) {},
-                    builder: (context, state) {
-                      return Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Container(
-                            width: quarterWidth,
-                            margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
-                            child: OutlinedButton(
-                                onPressed: () => {
-                                      context
-                                          .read<FavoritesCubit>()
-                                          .clickFavorite(vegetables[index],
-                                              vegetables[index].isFavorite),
-                                    },
-                                style: OutlinedButton.styleFrom(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(8.0),
-                                  ),
-                                  backgroundColor: AppStyles.whiteBtnColor,
-                                ),
-                                child: state.when(
-                                    initial: () => SvgPicture.asset(
-                                          'assets/svg/heart.svg',
-                                        ),
-                                    favorite: (vegetable, isFavorite) =>
-                                        vegetables[index].isFavorite == false
-                                            ? SvgPicture.asset(
-                                                'assets/svg/heart.svg',
-                                              )
-                                            : SvgPicture.asset(
-                                                'assets/svg/favorite.svg',
-                                                color: Colors.red))),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      FavButton(
+                          vegetable: vegetables[index],
+                          quarterWidth: quarterWidth),
+                      SizedBox(
+                        width: quarterWidth,
+                        child: IconButton(
+                          color: AppStyles.greenBtnColor,
+                          icon: SvgPicture.asset(
+                            'assets/svg/shopping-cart.svg',
                           ),
-                          SizedBox(
-                            width: quarterWidth,
-                            child: IconButton(
-                              color: AppStyles.greenBtnColor,
-                              icon: SvgPicture.asset(
-                                'assets/svg/shopping-cart.svg',
-                              ),
-                              onPressed: () {},
-                              style: OutlinedButton.styleFrom(
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                ),
-                                backgroundColor: AppStyles.greenBtnColor,
-                              ),
+                          onPressed: () {},
+                          style: OutlinedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
                             ),
+                            backgroundColor: AppStyles.greenBtnColor,
                           ),
-                        ],
-                      );
-                    },
-                  ),
+                        ),
+                      ),
+                    ],
+                  )
                 ],
               ),
             ),

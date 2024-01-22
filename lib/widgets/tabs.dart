@@ -43,8 +43,7 @@ class _Tabs extends State<Tabs> {
     return Scaffold(
       //appBar: AppBar(),
       backgroundColor: AppStyles.backgroundColor,
-      body: BlocConsumer<CategoryCubit, CategoryState>(
-        listener: (context, state) {},
+      body: BlocBuilder<CategoryCubit, CategoryState>(
         builder: (context, state) {
           return state.when(
               initial: () => activePage,
