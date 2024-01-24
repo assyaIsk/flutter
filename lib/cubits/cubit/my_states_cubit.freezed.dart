@@ -204,11 +204,11 @@ class __$$FavoriteImplCopyWithImpl<$Res>
     Object? isFavorite = null,
   }) {
     return _then(_$FavoriteImpl(
-      null == vegetable
+      vegetable: null == vegetable
           ? _value.vegetable
           : vegetable // ignore: cast_nullable_to_non_nullable
               as VegetablesModel,
-      null == isFavorite
+      isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -227,7 +227,7 @@ class __$$FavoriteImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$FavoriteImpl implements _Favorite {
-  const _$FavoriteImpl(this.vegetable, this.isFavorite);
+  const _$FavoriteImpl({required this.vegetable, required this.isFavorite});
 
   @override
   final VegetablesModel vegetable;
@@ -325,7 +325,8 @@ class _$FavoriteImpl implements _Favorite {
 
 abstract class _Favorite implements FavoritesState {
   const factory _Favorite(
-      final VegetablesModel vegetable, final bool isFavorite) = _$FavoriteImpl;
+      {required final VegetablesModel vegetable,
+      required final bool isFavorite}) = _$FavoriteImpl;
 
   VegetablesModel get vegetable;
   bool get isFavorite;
@@ -729,38 +730,44 @@ mixin _$SearchState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String value) search,
+    required TResult Function(List<CategoryModel> categories) searchCategory,
+    required TResult Function(List<VegetablesModel> vegetables) searchVegetable,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String value)? search,
+    TResult? Function(List<CategoryModel> categories)? searchCategory,
+    TResult? Function(List<VegetablesModel> vegetables)? searchVegetable,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String value)? search,
+    TResult Function(List<CategoryModel> categories)? searchCategory,
+    TResult Function(List<VegetablesModel> vegetables)? searchVegetable,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialSearch value) initial,
-    required TResult Function(_Search value) search,
+    required TResult Function(_SearchCategory value) searchCategory,
+    required TResult Function(_SearchVegetable value) searchVegetable,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialSearch value)? initial,
-    TResult? Function(_Search value)? search,
+    TResult? Function(_SearchCategory value)? searchCategory,
+    TResult? Function(_SearchVegetable value)? searchVegetable,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialSearch value)? initial,
-    TResult Function(_Search value)? search,
+    TResult Function(_SearchCategory value)? searchCategory,
+    TResult Function(_SearchVegetable value)? searchVegetable,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -823,7 +830,8 @@ class _$InitialSearchImpl implements _InitialSearch {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String value) search,
+    required TResult Function(List<CategoryModel> categories) searchCategory,
+    required TResult Function(List<VegetablesModel> vegetables) searchVegetable,
   }) {
     return initial();
   }
@@ -832,7 +840,8 @@ class _$InitialSearchImpl implements _InitialSearch {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String value)? search,
+    TResult? Function(List<CategoryModel> categories)? searchCategory,
+    TResult? Function(List<VegetablesModel> vegetables)? searchVegetable,
   }) {
     return initial?.call();
   }
@@ -841,7 +850,8 @@ class _$InitialSearchImpl implements _InitialSearch {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String value)? search,
+    TResult Function(List<CategoryModel> categories)? searchCategory,
+    TResult Function(List<VegetablesModel> vegetables)? searchVegetable,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -854,7 +864,8 @@ class _$InitialSearchImpl implements _InitialSearch {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialSearch value) initial,
-    required TResult Function(_Search value) search,
+    required TResult Function(_SearchCategory value) searchCategory,
+    required TResult Function(_SearchVegetable value) searchVegetable,
   }) {
     return initial(this);
   }
@@ -863,7 +874,8 @@ class _$InitialSearchImpl implements _InitialSearch {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialSearch value)? initial,
-    TResult? Function(_Search value)? search,
+    TResult? Function(_SearchCategory value)? searchCategory,
+    TResult? Function(_SearchVegetable value)? searchVegetable,
   }) {
     return initial?.call(this);
   }
@@ -872,7 +884,8 @@ class _$InitialSearchImpl implements _InitialSearch {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialSearch value)? initial,
-    TResult Function(_Search value)? search,
+    TResult Function(_SearchCategory value)? searchCategory,
+    TResult Function(_SearchVegetable value)? searchVegetable,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -887,93 +900,105 @@ abstract class _InitialSearch implements SearchState {
 }
 
 /// @nodoc
-abstract class _$$SearchImplCopyWith<$Res> {
-  factory _$$SearchImplCopyWith(
-          _$SearchImpl value, $Res Function(_$SearchImpl) then) =
-      __$$SearchImplCopyWithImpl<$Res>;
+abstract class _$$SearchCategoryImplCopyWith<$Res> {
+  factory _$$SearchCategoryImplCopyWith(_$SearchCategoryImpl value,
+          $Res Function(_$SearchCategoryImpl) then) =
+      __$$SearchCategoryImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String value});
+  $Res call({List<CategoryModel> categories});
 }
 
 /// @nodoc
-class __$$SearchImplCopyWithImpl<$Res>
-    extends _$SearchStateCopyWithImpl<$Res, _$SearchImpl>
-    implements _$$SearchImplCopyWith<$Res> {
-  __$$SearchImplCopyWithImpl(
-      _$SearchImpl _value, $Res Function(_$SearchImpl) _then)
+class __$$SearchCategoryImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$SearchCategoryImpl>
+    implements _$$SearchCategoryImplCopyWith<$Res> {
+  __$$SearchCategoryImplCopyWithImpl(
+      _$SearchCategoryImpl _value, $Res Function(_$SearchCategoryImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? value = null,
+    Object? categories = null,
   }) {
-    return _then(_$SearchImpl(
-      null == value
-          ? _value.value
-          : value // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$SearchCategoryImpl(
+      categories: null == categories
+          ? _value._categories
+          : categories // ignore: cast_nullable_to_non_nullable
+              as List<CategoryModel>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$SearchImpl implements _Search {
-  const _$SearchImpl(this.value);
+class _$SearchCategoryImpl implements _SearchCategory {
+  const _$SearchCategoryImpl({required final List<CategoryModel> categories})
+      : _categories = categories;
 
+  final List<CategoryModel> _categories;
   @override
-  final String value;
+  List<CategoryModel> get categories {
+    if (_categories is EqualUnmodifiableListView) return _categories;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_categories);
+  }
 
   @override
   String toString() {
-    return 'SearchState.search(value: $value)';
+    return 'SearchState.searchCategory(categories: $categories)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SearchImpl &&
-            (identical(other.value, value) || other.value == value));
+            other is _$SearchCategoryImpl &&
+            const DeepCollectionEquality()
+                .equals(other._categories, _categories));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, value);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_categories));
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
-      __$$SearchImplCopyWithImpl<_$SearchImpl>(this, _$identity);
+  _$$SearchCategoryImplCopyWith<_$SearchCategoryImpl> get copyWith =>
+      __$$SearchCategoryImplCopyWithImpl<_$SearchCategoryImpl>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String value) search,
+    required TResult Function(List<CategoryModel> categories) searchCategory,
+    required TResult Function(List<VegetablesModel> vegetables) searchVegetable,
   }) {
-    return search(value);
+    return searchCategory(categories);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String value)? search,
+    TResult? Function(List<CategoryModel> categories)? searchCategory,
+    TResult? Function(List<VegetablesModel> vegetables)? searchVegetable,
   }) {
-    return search?.call(value);
+    return searchCategory?.call(categories);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String value)? search,
+    TResult Function(List<CategoryModel> categories)? searchCategory,
+    TResult Function(List<VegetablesModel> vegetables)? searchVegetable,
     required TResult orElse(),
   }) {
-    if (search != null) {
-      return search(value);
+    if (searchCategory != null) {
+      return searchCategory(categories);
     }
     return orElse();
   }
@@ -982,39 +1007,193 @@ class _$SearchImpl implements _Search {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_InitialSearch value) initial,
-    required TResult Function(_Search value) search,
+    required TResult Function(_SearchCategory value) searchCategory,
+    required TResult Function(_SearchVegetable value) searchVegetable,
   }) {
-    return search(this);
+    return searchCategory(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_InitialSearch value)? initial,
-    TResult? Function(_Search value)? search,
+    TResult? Function(_SearchCategory value)? searchCategory,
+    TResult? Function(_SearchVegetable value)? searchVegetable,
   }) {
-    return search?.call(this);
+    return searchCategory?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_InitialSearch value)? initial,
-    TResult Function(_Search value)? search,
+    TResult Function(_SearchCategory value)? searchCategory,
+    TResult Function(_SearchVegetable value)? searchVegetable,
     required TResult orElse(),
   }) {
-    if (search != null) {
-      return search(this);
+    if (searchCategory != null) {
+      return searchCategory(this);
     }
     return orElse();
   }
 }
 
-abstract class _Search implements SearchState {
-  const factory _Search(final String value) = _$SearchImpl;
+abstract class _SearchCategory implements SearchState {
+  const factory _SearchCategory(
+      {required final List<CategoryModel> categories}) = _$SearchCategoryImpl;
 
-  String get value;
+  List<CategoryModel> get categories;
   @JsonKey(ignore: true)
-  _$$SearchImplCopyWith<_$SearchImpl> get copyWith =>
+  _$$SearchCategoryImplCopyWith<_$SearchCategoryImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchVegetableImplCopyWith<$Res> {
+  factory _$$SearchVegetableImplCopyWith(_$SearchVegetableImpl value,
+          $Res Function(_$SearchVegetableImpl) then) =
+      __$$SearchVegetableImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({List<VegetablesModel> vegetables});
+}
+
+/// @nodoc
+class __$$SearchVegetableImplCopyWithImpl<$Res>
+    extends _$SearchStateCopyWithImpl<$Res, _$SearchVegetableImpl>
+    implements _$$SearchVegetableImplCopyWith<$Res> {
+  __$$SearchVegetableImplCopyWithImpl(
+      _$SearchVegetableImpl _value, $Res Function(_$SearchVegetableImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? vegetables = null,
+  }) {
+    return _then(_$SearchVegetableImpl(
+      vegetables: null == vegetables
+          ? _value._vegetables
+          : vegetables // ignore: cast_nullable_to_non_nullable
+              as List<VegetablesModel>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchVegetableImpl implements _SearchVegetable {
+  const _$SearchVegetableImpl({required final List<VegetablesModel> vegetables})
+      : _vegetables = vegetables;
+
+  final List<VegetablesModel> _vegetables;
+  @override
+  List<VegetablesModel> get vegetables {
+    if (_vegetables is EqualUnmodifiableListView) return _vegetables;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_vegetables);
+  }
+
+  @override
+  String toString() {
+    return 'SearchState.searchVegetable(vegetables: $vegetables)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchVegetableImpl &&
+            const DeepCollectionEquality()
+                .equals(other._vegetables, _vegetables));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_vegetables));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchVegetableImplCopyWith<_$SearchVegetableImpl> get copyWith =>
+      __$$SearchVegetableImplCopyWithImpl<_$SearchVegetableImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function(List<CategoryModel> categories) searchCategory,
+    required TResult Function(List<VegetablesModel> vegetables) searchVegetable,
+  }) {
+    return searchVegetable(vegetables);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function(List<CategoryModel> categories)? searchCategory,
+    TResult? Function(List<VegetablesModel> vegetables)? searchVegetable,
+  }) {
+    return searchVegetable?.call(vegetables);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function(List<CategoryModel> categories)? searchCategory,
+    TResult Function(List<VegetablesModel> vegetables)? searchVegetable,
+    required TResult orElse(),
+  }) {
+    if (searchVegetable != null) {
+      return searchVegetable(vegetables);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialSearch value) initial,
+    required TResult Function(_SearchCategory value) searchCategory,
+    required TResult Function(_SearchVegetable value) searchVegetable,
+  }) {
+    return searchVegetable(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialSearch value)? initial,
+    TResult? Function(_SearchCategory value)? searchCategory,
+    TResult? Function(_SearchVegetable value)? searchVegetable,
+  }) {
+    return searchVegetable?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialSearch value)? initial,
+    TResult Function(_SearchCategory value)? searchCategory,
+    TResult Function(_SearchVegetable value)? searchVegetable,
+    required TResult orElse(),
+  }) {
+    if (searchVegetable != null) {
+      return searchVegetable(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchVegetable implements SearchState {
+  const factory _SearchVegetable(
+          {required final List<VegetablesModel> vegetables}) =
+      _$SearchVegetableImpl;
+
+  List<VegetablesModel> get vegetables;
+  @JsonKey(ignore: true)
+  _$$SearchVegetableImplCopyWith<_$SearchVegetableImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

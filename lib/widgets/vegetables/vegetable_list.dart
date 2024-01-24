@@ -18,22 +18,17 @@ class VegetableList extends StatelessWidget {
   Widget build(BuildContext context) {
     final halfWidth = MediaQuery.of(context).size.width / 2 - 20;
     final quarterWidth = halfWidth / 2 - 20;
+    List<VegetablesModel> newList = [];
     return BlocBuilder<SearchCubit, SearchState>(
       builder: (context, state) {
+        state.maybeWhen(
+            orElse: () => newList = vegetables,
+            searchVegetable: (vegetables) => {newList = vegetables});
         return Expanded(
-            child: state.when(
-          initial: () => VegetablesListWidget(
-              vegetables: vegetables,
-              halfWidth: halfWidth,
-              quarterWidth: quarterWidth),
-          search: (value) => VegetablesListWidget(
-              vegetables: vegetables
-                  .where(
-                      (e) => e.name.toUpperCase().contains(value.toUpperCase()))
-                  .toList(),
-              halfWidth: halfWidth,
-              quarterWidth: quarterWidth),
-        ));
+            child: VegetablesListWidget(
+                vegetables: newList,
+                halfWidth: halfWidth,
+                quarterWidth: quarterWidth));
       },
     );
   }

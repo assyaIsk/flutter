@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
+import 'package:vegetables/data/categories_data.dart';
+import 'package:vegetables/data/vegetable_data.dart';
 import 'package:vegetables/styles/style.dart';
 
 class SearchPanel extends StatelessWidget {
@@ -11,6 +13,7 @@ class SearchPanel extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String searchText = '';
     return Container(
       width: MediaQuery.of(context).size.width - 40,
       padding: const EdgeInsets.fromLTRB(22, 12, 22, 12),
@@ -28,19 +31,30 @@ class SearchPanel extends StatelessWidget {
             width: 8,
           ),
           Expanded(
-            child: TextField(
-              // controller: _controller,
-              onChanged: (String value) {
-                if (value.length < 3) {
-                  context.read<SearchCubit>().search('');
-                } else {
-                  context.read<SearchCubit>().search(value);
-                }
+            child: BlocBuilder<CategoryCubit, CategoryState>(
+              builder: (context, state) {
+                return TextField(
+                  // controller: _controller,
+                  onChanged: (String value) {
+                    if (value.length < 3) {
+                      searchText = '';
+                    } else {
+                      searchText = value;
+                    }
+                    state.maybeWhen(
+                        selectedCategory: () => {
+                              context.read<SearchCubit>().searchVegetable(
+                                  vegetables: vegetables,
+                                  searchText: searchText)
+                            },
+                        orElse: () => {
+                              context.read<SearchCubit>().searchCategory(
+                                  categories: categories,
+                                  searchText: searchText)
+                            });
+                  },
+                );
               },
-              // decoration: const InputDecoration(
-              //   labelText: 'Search',
-              // ),
-              // style: AppStyles.detailVioletTextStyle17
             ),
           ),
         ],

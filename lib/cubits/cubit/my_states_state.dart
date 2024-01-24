@@ -4,7 +4,8 @@ part of 'my_states_cubit.dart';
 class FavoritesState with _$FavoritesState {
   const factory FavoritesState.initial() = _Initial;
   const factory FavoritesState.favorite(
-      VegetablesModel vegetable, bool isFavorite) = _Favorite;
+      {required VegetablesModel vegetable,
+      required bool isFavorite}) = _Favorite;
 }
 
 @freezed
@@ -17,5 +18,8 @@ class CategoryState with _$CategoryState {
 @freezed
 class SearchState with _$SearchState {
   const factory SearchState.initial() = _InitialSearch;
-  const factory SearchState.search(String value) = _Search;
+  const factory SearchState.searchCategory(
+      {required List<CategoryModel> categories}) = _SearchCategory;
+  const factory SearchState.searchVegetable(
+      {required List<VegetablesModel> vegetables}) = _SearchVegetable;
 }

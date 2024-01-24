@@ -20,7 +20,9 @@ class VegetablesScreen extends StatelessWidget {
         // categories
         const CategoryList(),
         //list of vegetables
-        VegetableList(vegetables: vegetables),
+        VegetableList(
+          vegetables: vegetables,
+        ),
       ],
     );
   }

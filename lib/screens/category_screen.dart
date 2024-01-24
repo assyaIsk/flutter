@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
 import 'package:vegetables/data/categories_data.dart';
+import 'package:vegetables/models/category.dart';
 import 'package:vegetables/widgets/header/header.dart';
 import '../widgets/categories/category_item.dart';
 
@@ -10,17 +11,18 @@ class CategoryScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String searchText = '';
+    List<CategoryModel> newList = [];
+
     return BlocBuilder<SearchCubit, SearchState>(
       builder: (context, state) {
-        state.when(
-          initial: () => searchText = '',
-          search: (value) => searchText = value,
+        state.maybeWhen(
+          searchCategory: (categories) => {newList = (categories)},
+          orElse: () => newList = categories,
         );
         return Column(
           children: [
             const Header(screenName: 'Categories', isFirstTab: true),
-            Expanded(child: MyGridWidget(searchText: searchText)),
+            Expanded(child: MyGridWidget(categories: newList)),
           ],
         );
       },
@@ -29,8 +31,8 @@ class CategoryScreen extends StatelessWidget {
 }
 
 class MyGridWidget extends StatelessWidget {
-  const MyGridWidget({super.key, required this.searchText});
-  final String searchText;
+  const MyGridWidget({super.key, required this.categories});
+  final List<CategoryModel> categories;
   @override
   Widget build(BuildContext context) {
     return GridView(
@@ -41,16 +43,14 @@ class MyGridWidget extends StatelessWidget {
           crossAxisSpacing: 20,
           mainAxisSpacing: 20,
           maxCrossAxisExtent: 200),
-      children: categories
-          .where((e) => e.name.toUpperCase().contains(searchText.toUpperCase()))
-          .map((item) {
+      children: categories.map((item) {
         return BlocBuilder<CategoryCubit, CategoryState>(
           builder: (context, state) {
             return GestureDetector(
               child: CategoryItem(category: item),
               onTap: () => {
                 context.read<CategoryCubit>().selectCategory(),
-                context.read<SearchCubit>().resetSearch()
+                context.read<SearchCubit>().resetSearchCategory()
               },
             );
           },

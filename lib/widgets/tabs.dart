@@ -23,7 +23,7 @@ class _Tabs extends State<Tabs> {
   void _selectPage(int index) {
     setState(() {
       context.read<CategoryCubit>().unselectCategory();
-      context.read<SearchCubit>().resetSearch();
+      context.read<SearchCubit>().resetSearchCategory();
       _selectedPageIndex = index;
     });
   }
@@ -45,10 +45,10 @@ class _Tabs extends State<Tabs> {
       backgroundColor: AppStyles.backgroundColor,
       body: BlocBuilder<CategoryCubit, CategoryState>(
         builder: (context, state) {
-          return state.when(
-              initial: () => activePage,
-              selectedCategory: () => const VegetablesScreen(),
-              unselectCategory: () => activePage);
+          return state.maybeWhen(
+            selectedCategory: () => const VegetablesScreen(),
+            orElse: () => activePage,
+          );
         },
       ),
       bottomNavigationBar: NavigationBar(

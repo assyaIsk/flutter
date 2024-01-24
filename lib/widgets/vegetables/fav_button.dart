@@ -39,9 +39,8 @@ class FavButton extends StatelessWidget {
           width: quarterWidth,
           child: OutlinedButton(
               onPressed: () => {
-                    context
-                        .read<FavoritesCubit>()
-                        .clickFavorite(vegetable, vegetable.isFavorite),
+                    context.read<FavoritesCubit>().clickFavorite(
+                        vegetable: vegetable, isFavorite: vegetable.isFavorite),
                   },
               style: OutlinedButton.styleFrom(
                   shape: RoundedRectangleBorder(

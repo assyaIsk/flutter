@@ -15,6 +15,10 @@ class FavoritesScreen extends StatelessWidget {
     return BlocBuilder<FavoritesCubit, FavoritesState>(
       builder: (context, state) {
         favoriteList = context.read<FavoritesCubit>().checkfavorites();
+
+        context
+            .read<SearchCubit>()
+            .resetSearchVegetable(vegetables: favoriteList);
         return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const Header(screenName: 'Favorites', isFirstTab: false),
 
