@@ -25,10 +25,12 @@ class VegetableList extends StatelessWidget {
             orElse: () => newList = vegetables,
             searchVegetable: (vegetables) => {newList = vegetables});
         return Expanded(
-            child: VegetablesListWidget(
-                vegetables: newList,
-                halfWidth: halfWidth,
-                quarterWidth: quarterWidth));
+            child: vegetables.isEmpty
+                ? const Center(child: Text('No favorites'))
+                : VegetablesListWidget(
+                    vegetables: newList,
+                    halfWidth: halfWidth,
+                    quarterWidth: quarterWidth));
       },
     );
   }
