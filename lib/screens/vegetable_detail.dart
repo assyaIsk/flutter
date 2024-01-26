@@ -31,7 +31,7 @@ class VegetableDetailScreen extends StatelessWidget {
                   decoration:
                       const BoxDecoration(color: AppStyles.violetLightColor),
                   child: Image.asset(
-                    'assets/Media.png',
+                    'assets/bg/Media.png',
                   ),
                 ),
               ),
