@@ -114,7 +114,7 @@ class VegetableDetailScreen extends StatelessWidget {
                           child: TextButton.icon(
                             label: const Text(
                               'ADD TO CART',
-                              style: TextStyle(color: AppStyles.whiteBtnColor),
+                              style: AppStyles.whiteTextStyle15,
                             ),
                             icon: SvgPicture.asset(
                               'assets/svg/shopping-cart.svg',

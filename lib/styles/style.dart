@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class AppStyles {
   static const Color backgroundColor = Color(0xfff6f5f5);
+  static const Color backgroundColorHome = Color.fromARGB(255, 161, 89, 255);
   static const Color violetLightColor = Color(0xffdbd8dd);
   static const Color violetDarkColor = Color(0xff2d0c57);
   static const Color violetColor = Color(0xff9586a8);
@@ -58,4 +59,9 @@ class AppStyles {
       fontWeight: FontWeight.w400,
       letterSpacing: -0.41,
       color: AppStyles.violetColor);
+  static const TextStyle whiteTextStyle15 = TextStyle(
+      fontSize: 15,
+      fontWeight: FontWeight.w600,
+      letterSpacing: -0.41,
+      color: Colors.white);
 }
