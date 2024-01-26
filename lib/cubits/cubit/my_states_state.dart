@@ -3,9 +3,10 @@ part of 'my_states_cubit.dart';
 @freezed
 class FavoritesState with _$FavoritesState {
   const factory FavoritesState.initial() = _Initial;
-  const factory FavoritesState.favorite(
-      {required VegetablesModel vegetable,
-      required bool isFavorite}) = _Favorite;
+  const factory FavoritesState.favorite({required VegetablesModel vegetable}) =
+      _Favorite;
+  const factory FavoritesState.unFavorite(
+      {required VegetablesModel vegetable}) = _UnFavorite;
 }
 
 @freezed

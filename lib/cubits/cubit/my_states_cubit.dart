@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:vegetables/data/categories_data.dart';
 import 'package:vegetables/data/vegetable_data.dart';
@@ -11,10 +12,16 @@ part 'my_states_cubit.freezed.dart';
 class FavoritesCubit extends Cubit<FavoritesState> {
   FavoritesCubit() : super(const FavoritesState.initial());
 
-  void clickFavorite(
-      {required VegetablesModel vegetable, required bool isFavorite}) {
+  void clickFavorite({required VegetablesModel vegetable}) {
     vegetable.isFavorite = !vegetable.isFavorite;
-    emit(FavoritesState.favorite(vegetable: vegetable, isFavorite: isFavorite));
+    VegetablesModel updatedVegetable =
+        vegetable.copyWith(isFavorite: vegetable.isFavorite);
+
+    if (vegetable.isFavorite) {
+      emit(FavoritesState.favorite(vegetable: updatedVegetable));
+    } else {
+      emit(FavoritesState.unFavorite(vegetable: updatedVegetable));
+    }
   }
 
   checkfavorites() {

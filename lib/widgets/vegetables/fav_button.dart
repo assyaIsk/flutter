@@ -15,6 +15,7 @@ class FavButton extends StatelessWidget {
   Widget build(BuildContext context) {
     String favIcon = 'assets/svg/heart.svg';
     Color favIconColor = Colors.black;
+
     setDefaultsFavIcon() {
       favIcon = 'assets/svg/heart.svg';
       favIconColor = Colors.black;
@@ -22,25 +23,26 @@ class FavButton extends StatelessWidget {
 
     return BlocBuilder<FavoritesCubit, FavoritesState>(
       builder: (context, state) {
-        state.when(
+        state.maybeWhen(
             initial: () {
               setDefaultsFavIcon();
             },
-            favorite: (veg, isFavorite) => {
-                  vegetable.isFavorite == true
-                      ? {
-                          favIcon = 'assets/svg/favorite.svg',
-                          favIconColor = Colors.red
-                        }
-                      : setDefaultsFavIcon()
+            orElse: () => {
+                  setDefaultsFavIcon(),
+                  if (vegetable.isFavorite == true)
+                    {
+                      favIcon = 'assets/svg/favorite.svg',
+                      favIconColor = Colors.red
+                    }
                 });
         return Container(
           margin: const EdgeInsets.fromLTRB(0, 0, 20, 0),
           width: quarterWidth,
           child: OutlinedButton(
               onPressed: () => {
-                    context.read<FavoritesCubit>().clickFavorite(
-                        vegetable: vegetable, isFavorite: vegetable.isFavorite),
+                    context
+                        .read<FavoritesCubit>()
+                        .clickFavorite(vegetable: vegetable),
                   },
               style: OutlinedButton.styleFrom(
                   shape: RoundedRectangleBorder(
