@@ -1352,3 +1352,517 @@ abstract class _SearchVegetable implements SearchState {
   _$$SearchVegetableImplCopyWith<_$SearchVegetableImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$CartState {
+  int get count => throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int count) initial,
+    required TResult Function(int count) addToCart,
+    required TResult Function(int count) deleteFromCart,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int count)? initial,
+    TResult? Function(int count)? addToCart,
+    TResult? Function(int count)? deleteFromCart,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int count)? initial,
+    TResult Function(int count)? addToCart,
+    TResult Function(int count)? deleteFromCart,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialCart value) initial,
+    required TResult Function(_AddToCart value) addToCart,
+    required TResult Function(_DelFromCart value) deleteFromCart,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialCart value)? initial,
+    TResult? Function(_AddToCart value)? addToCart,
+    TResult? Function(_DelFromCart value)? deleteFromCart,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialCart value)? initial,
+    TResult Function(_AddToCart value)? addToCart,
+    TResult Function(_DelFromCart value)? deleteFromCart,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+
+  @JsonKey(ignore: true)
+  $CartStateCopyWith<CartState> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CartStateCopyWith<$Res> {
+  factory $CartStateCopyWith(CartState value, $Res Function(CartState) then) =
+      _$CartStateCopyWithImpl<$Res, CartState>;
+  @useResult
+  $Res call({int count});
+}
+
+/// @nodoc
+class _$CartStateCopyWithImpl<$Res, $Val extends CartState>
+    implements $CartStateCopyWith<$Res> {
+  _$CartStateCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? count = null,
+  }) {
+    return _then(_value.copyWith(
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$InitialCartImplCopyWith<$Res>
+    implements $CartStateCopyWith<$Res> {
+  factory _$$InitialCartImplCopyWith(
+          _$InitialCartImpl value, $Res Function(_$InitialCartImpl) then) =
+      __$$InitialCartImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int count});
+}
+
+/// @nodoc
+class __$$InitialCartImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$InitialCartImpl>
+    implements _$$InitialCartImplCopyWith<$Res> {
+  __$$InitialCartImplCopyWithImpl(
+      _$InitialCartImpl _value, $Res Function(_$InitialCartImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? count = null,
+  }) {
+    return _then(_$InitialCartImpl(
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$InitialCartImpl implements _InitialCart {
+  const _$InitialCartImpl({required this.count});
+
+  @override
+  final int count;
+
+  @override
+  String toString() {
+    return 'CartState.initial(count: $count)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$InitialCartImpl &&
+            (identical(other.count, count) || other.count == count));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, count);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$InitialCartImplCopyWith<_$InitialCartImpl> get copyWith =>
+      __$$InitialCartImplCopyWithImpl<_$InitialCartImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int count) initial,
+    required TResult Function(int count) addToCart,
+    required TResult Function(int count) deleteFromCart,
+  }) {
+    return initial(count);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int count)? initial,
+    TResult? Function(int count)? addToCart,
+    TResult? Function(int count)? deleteFromCart,
+  }) {
+    return initial?.call(count);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int count)? initial,
+    TResult Function(int count)? addToCart,
+    TResult Function(int count)? deleteFromCart,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(count);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialCart value) initial,
+    required TResult Function(_AddToCart value) addToCart,
+    required TResult Function(_DelFromCart value) deleteFromCart,
+  }) {
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialCart value)? initial,
+    TResult? Function(_AddToCart value)? addToCart,
+    TResult? Function(_DelFromCart value)? deleteFromCart,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialCart value)? initial,
+    TResult Function(_AddToCart value)? addToCart,
+    TResult Function(_DelFromCart value)? deleteFromCart,
+    required TResult orElse(),
+  }) {
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _InitialCart implements CartState {
+  const factory _InitialCart({required final int count}) = _$InitialCartImpl;
+
+  @override
+  int get count;
+  @override
+  @JsonKey(ignore: true)
+  _$$InitialCartImplCopyWith<_$InitialCartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$AddToCartImplCopyWith<$Res>
+    implements $CartStateCopyWith<$Res> {
+  factory _$$AddToCartImplCopyWith(
+          _$AddToCartImpl value, $Res Function(_$AddToCartImpl) then) =
+      __$$AddToCartImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int count});
+}
+
+/// @nodoc
+class __$$AddToCartImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$AddToCartImpl>
+    implements _$$AddToCartImplCopyWith<$Res> {
+  __$$AddToCartImplCopyWithImpl(
+      _$AddToCartImpl _value, $Res Function(_$AddToCartImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? count = null,
+  }) {
+    return _then(_$AddToCartImpl(
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$AddToCartImpl implements _AddToCart {
+  const _$AddToCartImpl({required this.count});
+
+  @override
+  final int count;
+
+  @override
+  String toString() {
+    return 'CartState.addToCart(count: $count)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$AddToCartImpl &&
+            (identical(other.count, count) || other.count == count));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, count);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$AddToCartImplCopyWith<_$AddToCartImpl> get copyWith =>
+      __$$AddToCartImplCopyWithImpl<_$AddToCartImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int count) initial,
+    required TResult Function(int count) addToCart,
+    required TResult Function(int count) deleteFromCart,
+  }) {
+    return addToCart(count);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int count)? initial,
+    TResult? Function(int count)? addToCart,
+    TResult? Function(int count)? deleteFromCart,
+  }) {
+    return addToCart?.call(count);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int count)? initial,
+    TResult Function(int count)? addToCart,
+    TResult Function(int count)? deleteFromCart,
+    required TResult orElse(),
+  }) {
+    if (addToCart != null) {
+      return addToCart(count);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialCart value) initial,
+    required TResult Function(_AddToCart value) addToCart,
+    required TResult Function(_DelFromCart value) deleteFromCart,
+  }) {
+    return addToCart(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialCart value)? initial,
+    TResult? Function(_AddToCart value)? addToCart,
+    TResult? Function(_DelFromCart value)? deleteFromCart,
+  }) {
+    return addToCart?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialCart value)? initial,
+    TResult Function(_AddToCart value)? addToCart,
+    TResult Function(_DelFromCart value)? deleteFromCart,
+    required TResult orElse(),
+  }) {
+    if (addToCart != null) {
+      return addToCart(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _AddToCart implements CartState {
+  const factory _AddToCart({required final int count}) = _$AddToCartImpl;
+
+  @override
+  int get count;
+  @override
+  @JsonKey(ignore: true)
+  _$$AddToCartImplCopyWith<_$AddToCartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$DelFromCartImplCopyWith<$Res>
+    implements $CartStateCopyWith<$Res> {
+  factory _$$DelFromCartImplCopyWith(
+          _$DelFromCartImpl value, $Res Function(_$DelFromCartImpl) then) =
+      __$$DelFromCartImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({int count});
+}
+
+/// @nodoc
+class __$$DelFromCartImplCopyWithImpl<$Res>
+    extends _$CartStateCopyWithImpl<$Res, _$DelFromCartImpl>
+    implements _$$DelFromCartImplCopyWith<$Res> {
+  __$$DelFromCartImplCopyWithImpl(
+      _$DelFromCartImpl _value, $Res Function(_$DelFromCartImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? count = null,
+  }) {
+    return _then(_$DelFromCartImpl(
+      count: null == count
+          ? _value.count
+          : count // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DelFromCartImpl implements _DelFromCart {
+  const _$DelFromCartImpl({required this.count});
+
+  @override
+  final int count;
+
+  @override
+  String toString() {
+    return 'CartState.deleteFromCart(count: $count)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DelFromCartImpl &&
+            (identical(other.count, count) || other.count == count));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, count);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DelFromCartImplCopyWith<_$DelFromCartImpl> get copyWith =>
+      __$$DelFromCartImplCopyWithImpl<_$DelFromCartImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(int count) initial,
+    required TResult Function(int count) addToCart,
+    required TResult Function(int count) deleteFromCart,
+  }) {
+    return deleteFromCart(count);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function(int count)? initial,
+    TResult? Function(int count)? addToCart,
+    TResult? Function(int count)? deleteFromCart,
+  }) {
+    return deleteFromCart?.call(count);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(int count)? initial,
+    TResult Function(int count)? addToCart,
+    TResult Function(int count)? deleteFromCart,
+    required TResult orElse(),
+  }) {
+    if (deleteFromCart != null) {
+      return deleteFromCart(count);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_InitialCart value) initial,
+    required TResult Function(_AddToCart value) addToCart,
+    required TResult Function(_DelFromCart value) deleteFromCart,
+  }) {
+    return deleteFromCart(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_InitialCart value)? initial,
+    TResult? Function(_AddToCart value)? addToCart,
+    TResult? Function(_DelFromCart value)? deleteFromCart,
+  }) {
+    return deleteFromCart?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_InitialCart value)? initial,
+    TResult Function(_AddToCart value)? addToCart,
+    TResult Function(_DelFromCart value)? deleteFromCart,
+    required TResult orElse(),
+  }) {
+    if (deleteFromCart != null) {
+      return deleteFromCart(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DelFromCart implements CartState {
+  const factory _DelFromCart({required final int count}) = _$DelFromCartImpl;
+
+  @override
+  int get count;
+  @override
+  @JsonKey(ignore: true)
+  _$$DelFromCartImplCopyWith<_$DelFromCartImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}

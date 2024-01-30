@@ -6,6 +6,7 @@ import 'package:vegetables/screens/favorites_screen.dart';
 import 'package:vegetables/screens/profile.dart';
 import 'package:vegetables/screens/vegetables_screen.dart';
 import 'package:vegetables/styles/style.dart';
+import 'package:badges/badges.dart' as badges;
 
 class Tabs extends StatefulWidget {
   const Tabs({super.key});
@@ -19,15 +20,7 @@ class Tabs extends StatefulWidget {
 class _Tabs extends State<Tabs> {
   int _selectedPageIndex = 0;
   bool categorySelected = false;
-
-  void _selectPage(int index) {
-    setState(() {
-      context.read<CategoryCubit>().unselectCategory();
-      context.read<SearchCubit>().resetSearchCategory();
-      _selectedPageIndex = index;
-    });
-  }
-
+  int countInCart = 0;
   @override
   Widget build(BuildContext context) {
     Widget activePage = const CategoryScreen();
@@ -51,23 +44,41 @@ class _Tabs extends State<Tabs> {
           );
         },
       ),
-      bottomNavigationBar: NavigationBar(
-        onDestinationSelected: _selectPage,
-        selectedIndex: _selectedPageIndex,
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.grid_view_rounded),
-            label: 'Categories',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.shopping_cart_outlined),
-            label: 'Favorites',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.account_circle_outlined),
-            label: 'User',
-          ),
-        ],
+      bottomNavigationBar: BlocBuilder<CartCubit, CartState>(
+        builder: (context, state) {
+          return BottomNavigationBar(
+            currentIndex: _selectedPageIndex,
+            onTap: (index) {
+              setState(() {
+                context.read<CategoryCubit>().unselectCategory();
+                context.read<SearchCubit>().resetSearchCategory();
+                _selectedPageIndex = index;
+              });
+            },
+            items: [
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.grid_view_rounded),
+                label: 'Categories',
+              ),
+              BottomNavigationBarItem(
+                icon: state.maybeWhen(
+                    orElse: () => const Icon(Icons.shopping_cart_outlined),
+                    addToCart: (count) {
+                      return badges.Badge(
+                        badgeContent:
+                            Text(count.toString()), // Количество уведомлений
+                        child: const Icon(Icons.shopping_cart_outlined),
+                      );
+                    }),
+                label: 'Favorites',
+              ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_outlined),
+                label: 'User',
+              ),
+            ],
+          );
+        },
       ),
     );
   }

@@ -121,7 +121,9 @@ class VegetablesListWidget extends StatelessWidget {
                           icon: SvgPicture.asset(
                             'assets/svg/shopping-cart.svg',
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            context.read<CartCubit>().increment();
+                          },
                           style: OutlinedButton.styleFrom(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),

@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -66,5 +68,17 @@ class SearchCubit extends Cubit<SearchState> {
 
   void resetSearchVegetable({required List<VegetablesModel> vegetables}) {
     emit(SearchState.searchVegetable(vegetables: vegetables));
+  }
+}
+
+class CartCubit extends Cubit<CartState> {
+  CartCubit() : super(const CartState.initial(count: 0));
+
+  void increment() {
+    emit(CartState.addToCart(count: state.count + 1));
+  }
+
+  void clearCart() {
+    emit(const CartState.initial(count: 0));
   }
 }

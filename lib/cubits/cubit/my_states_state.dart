@@ -24,3 +24,10 @@ class SearchState with _$SearchState {
   const factory SearchState.searchVegetable(
       {required List<VegetablesModel> vegetables}) = _SearchVegetable;
 }
+
+@freezed
+class CartState with _$CartState {
+  const factory CartState.initial({required int count}) = _InitialCart;
+  const factory CartState.addToCart({required int count}) = _AddToCart;
+  const factory CartState.deleteFromCart({required int count}) = _DelFromCart;
+}
