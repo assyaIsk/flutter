@@ -6,6 +6,11 @@ final vegetables = <VegetablesModel>[
       price: 1.10,
       unit: Units.piece,
       imageUrl: 'assets/images/Media.png',
+      imageUrls: [
+        'assets/bg/Media.png',
+        'assets/images/Media3.png',
+        'assets/images/Media2.png'
+      ],
       isFavorite: false,
       text:
           'Lettuce is an annual plant of the daisy family, Asteraceae. It is most often grown as a leaf vegetable, but sometimes for its stem and seeds. Lettuce is most often used for salads, although it is also seen in other kinds of food, such as soups, sandwiches and wraps; it can also be grilled.'),
@@ -14,6 +19,11 @@ final vegetables = <VegetablesModel>[
       price: 1.85,
       unit: Units.kg,
       imageUrl: 'assets/images/Media2.png',
+      imageUrls: [
+        'assets/bg/Media.png',
+        'assets/images/Media2.png',
+        'assets/images/Media3.png'
+      ],
       isFavorite: false,
       text: 'Purple Cauliflower'),
   VegetablesModel(
@@ -21,6 +31,11 @@ final vegetables = <VegetablesModel>[
       price: 1.45,
       unit: Units.kg,
       imageUrl: 'assets/images/Media3.png',
+      imageUrls: [
+        'assets/bg/Media.png',
+        'assets/images/Media2.png',
+        'assets/images/Media2.png'
+      ],
       isFavorite: false,
       text: 'Savoy Cabbage'),
   VegetablesModel(
@@ -28,6 +43,11 @@ final vegetables = <VegetablesModel>[
       price: 1.00,
       unit: Units.kg,
       imageUrl: 'assets/images/Media3.png',
+      imageUrls: [
+        'assets/bg/Media.png',
+        'assets/images/Media3.png',
+        'assets/images/Media2.png'
+      ],
       isFavorite: false,
       text: 'Boston Cabbage'),
 ];

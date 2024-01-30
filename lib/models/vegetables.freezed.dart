@@ -21,6 +21,7 @@ mixin _$VegetablesModel {
   Units get unit => throw _privateConstructorUsedError;
   String get imageUrl => throw _privateConstructorUsedError;
   String get text => throw _privateConstructorUsedError;
+  List<String> get imageUrls => throw _privateConstructorUsedError;
   bool get isFavorite => throw _privateConstructorUsedError;
   set isFavorite(bool value) => throw _privateConstructorUsedError;
 
@@ -41,6 +42,7 @@ abstract class $VegetablesModelCopyWith<$Res> {
       Units unit,
       String imageUrl,
       String text,
+      List<String> imageUrls,
       bool isFavorite});
 }
 
@@ -62,6 +64,7 @@ class _$VegetablesModelCopyWithImpl<$Res, $Val extends VegetablesModel>
     Object? unit = null,
     Object? imageUrl = null,
     Object? text = null,
+    Object? imageUrls = null,
     Object? isFavorite = null,
   }) {
     return _then(_value.copyWith(
@@ -85,6 +88,10 @@ class _$VegetablesModelCopyWithImpl<$Res, $Val extends VegetablesModel>
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrls: null == imageUrls
+          ? _value.imageUrls
+          : imageUrls // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
@@ -107,6 +114,7 @@ abstract class _$$VegetablesModelImplCopyWith<$Res>
       Units unit,
       String imageUrl,
       String text,
+      List<String> imageUrls,
       bool isFavorite});
 }
 
@@ -126,6 +134,7 @@ class __$$VegetablesModelImplCopyWithImpl<$Res>
     Object? unit = null,
     Object? imageUrl = null,
     Object? text = null,
+    Object? imageUrls = null,
     Object? isFavorite = null,
   }) {
     return _then(_$VegetablesModelImpl(
@@ -149,6 +158,10 @@ class __$$VegetablesModelImplCopyWithImpl<$Res>
           ? _value.text
           : text // ignore: cast_nullable_to_non_nullable
               as String,
+      imageUrls: null == imageUrls
+          ? _value.imageUrls
+          : imageUrls // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       isFavorite: null == isFavorite
           ? _value.isFavorite
           : isFavorite // ignore: cast_nullable_to_non_nullable
@@ -166,6 +179,7 @@ class _$VegetablesModelImpl implements _VegetablesModel {
       required this.unit,
       required this.imageUrl,
       required this.text,
+      required this.imageUrls,
       this.isFavorite = false});
 
   @override
@@ -179,12 +193,14 @@ class _$VegetablesModelImpl implements _VegetablesModel {
   @override
   final String text;
   @override
+  final List<String> imageUrls;
+  @override
   @JsonKey()
   bool isFavorite;
 
   @override
   String toString() {
-    return 'VegetablesModel(name: $name, price: $price, unit: $unit, imageUrl: $imageUrl, text: $text, isFavorite: $isFavorite)';
+    return 'VegetablesModel(name: $name, price: $price, unit: $unit, imageUrl: $imageUrl, text: $text, imageUrls: $imageUrls, isFavorite: $isFavorite)';
   }
 
   @JsonKey(ignore: true)
@@ -202,6 +218,7 @@ abstract class _VegetablesModel implements VegetablesModel {
       required final Units unit,
       required final String imageUrl,
       required final String text,
+      required final List<String> imageUrls,
       bool isFavorite}) = _$VegetablesModelImpl;
 
   @override
@@ -214,6 +231,8 @@ abstract class _VegetablesModel implements VegetablesModel {
   String get imageUrl;
   @override
   String get text;
+  @override
+  List<String> get imageUrls;
   @override
   bool get isFavorite;
   set isFavorite(bool value);

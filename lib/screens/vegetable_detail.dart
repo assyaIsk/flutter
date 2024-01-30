@@ -5,6 +5,7 @@ import 'package:vegetables/styles/style.dart';
 import 'package:vegetables/widgets/header/back_arrow.dart';
 
 import '../widgets/vegetables/fav_button.dart';
+import '../widgets/vegetables/image_slider.dart';
 
 class VegetableDetailScreen extends StatelessWidget {
   const VegetableDetailScreen({super.key, required this.vegetable});
@@ -21,42 +22,12 @@ class VegetableDetailScreen extends StatelessWidget {
         ),
         child: Stack(
           children: [
-            Positioned(
-              left: 0,
-              top: 0,
-              child: Align(
-                child: Container(
-                  width: 414,
-                  height: 358,
-                  decoration:
-                      const BoxDecoration(color: AppStyles.violetLightColor),
-                  child: Image.asset(
-                    'assets/bg/Media.png',
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              left: 187,
-              top: 258,
-              child: Align(
-                child: SizedBox(
-                  width: 40,
-                  height: 8,
-                  child: SvgPicture.asset(
-                    'assets/svg/Dots.svg',
-                  ),
-                ),
-              ),
-            ),
+            ImageSlider(imageUrls: vegetable.imageUrls),
             const Positioned(left: 0, top: 0, child: BackArrow()),
-            Positioned(
-              left: 0,
-              top: 281,
-              child: Container(
+            Column(mainAxisAlignment: MainAxisAlignment.end, children: [
+              Container(
                 padding: const EdgeInsets.fromLTRB(20, 37, 20, 65),
-                width: 414,
-                height: 615,
+                height: MediaQuery.of(context).size.height * 2 / 3,
                 decoration: const BoxDecoration(
                   color: AppStyles.backgroundColor,
                   borderRadius: BorderRadius.only(
@@ -132,7 +103,7 @@ class VegetableDetailScreen extends StatelessWidget {
                   ],
                 ),
               ),
-            ),
+            ]),
           ],
         ),
       ),

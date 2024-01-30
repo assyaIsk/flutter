@@ -11,5 +11,6 @@ class VegetablesModel with _$VegetablesModel {
       required final Units unit,
       required final String imageUrl,
       required final String text,
+      required final List<String> imageUrls,
       @Default(false) bool isFavorite}) = _VegetablesModel;
 }
