@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:bloc/bloc.dart';
-import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:vegetables/data/categories_data.dart';
 import 'package:vegetables/data/vegetable_data.dart';
