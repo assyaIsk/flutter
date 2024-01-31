@@ -12,12 +12,13 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const Header(screenName: 'CartScreen', isFirstTab: false),
+        const Header(screenName: 'Cart', isFirstTab: false),
         BlocBuilder<CartCubit, CartState>(
           builder: (context, state) {
             return Column(
               children: state.maybeWhen(
-                deleteFromCart: (count) => [const Text("Cart is empty")],
+                deleteFromCart: (count) =>
+                    [const Center(child: Text("Cart is empty"))],
                 orElse: () => carts
                     .map((item) => ListTile(
                           title: Text("${item.vegetable.name} - ${item.count}"),

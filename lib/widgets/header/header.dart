@@ -21,14 +21,22 @@ class Header extends StatelessWidget {
           ),
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const BackArrow(),
-            Text(
-              screenName,
-              style: AppStyles.detailTitleTextStyle30,
-              textAlign: TextAlign.start,
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: Text(
+                screenName,
+                style: AppStyles.detailTitleTextStyle30,
+                textAlign: TextAlign.start,
+              ),
             ),
-            if (isFirstTab) const SearchPanel(),
+            if (isFirstTab)
+              const Padding(
+                padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                child: SearchPanel(),
+              ),
             const SizedBox(height: 20)
           ],
         ),

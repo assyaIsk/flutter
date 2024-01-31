@@ -7,7 +7,7 @@ class BackArrow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.fromLTRB(21, 42, 367, 22),
+      padding: const EdgeInsets.fromLTRB(5, 42, 0, 0),
       child: Align(
           alignment: Alignment.centerLeft,
           child: InkWell(
