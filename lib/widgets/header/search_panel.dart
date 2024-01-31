@@ -34,6 +34,11 @@ class SearchPanel extends StatelessWidget {
             child: BlocBuilder<CategoryCubit, CategoryState>(
               builder: (context, state) {
                 return TextField(
+                  decoration: const InputDecoration(
+                    hintText: 'Search',
+                    hintStyle: AppStyles.detailVioletTextStyle17,
+                    border: InputBorder.none,
+                  ),
                   // controller: _controller,
                   onChanged: (String value) {
                     if (value.length < 3) {

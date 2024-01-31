@@ -93,7 +93,9 @@ class VegetableDetailScreen extends StatelessWidget {
                               'assets/svg/shopping-cart.svg',
                             ),
                             onPressed: () {
-                              context.read<CartCubit>().increment();
+                              context
+                                  .read<CartCubit>()
+                                  .increment(vegetable: vegetable);
                             },
                             style: OutlinedButton.styleFrom(
                                 shape: RoundedRectangleBorder(

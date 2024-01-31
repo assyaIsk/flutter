@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:vegetables/data/cart_data.dart';
 import 'package:vegetables/data/categories_data.dart';
 import 'package:vegetables/data/vegetable_data.dart';
+import 'package:vegetables/models/cart.dart';
 import 'package:vegetables/models/category.dart';
 import 'package:vegetables/models/vegetables.dart';
 
@@ -71,11 +73,29 @@ class SearchCubit extends Cubit<SearchState> {
 class CartCubit extends Cubit<CartState> {
   CartCubit() : super(const CartState.initial(count: 0));
 
-  void increment() {
+  void increment({required VegetablesModel vegetable}) {
+    if (carts.isEmpty) {
+      CartModel newCart =
+          CartModel(vegetable: vegetable, count: state.count + 1);
+      carts.add(newCart);
+    } else {
+      int index =
+          carts.indexWhere((cart) => cart.vegetable.name == vegetable.name);
+
+      if (index != -1) {
+        // If the element was found, update its count
+        carts[index] = carts[index].copyWith(count: carts[index].count + 1);
+      } else {
+        // If the element was not found, add a new CartModel
+        CartModel newCart = CartModel(vegetable: vegetable, count: 1);
+        carts.add(newCart);
+      }
+    }
     emit(CartState.addToCart(count: state.count + 1));
   }
 
   void clearCart() {
-    emit(const CartState.initial(count: 0));
+    carts.clear();
+    emit(const CartState.deleteFromCart(count: 0));
   }
 }

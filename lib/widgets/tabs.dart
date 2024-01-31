@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:vegetables/cubits/cubit/my_states_cubit.dart';
+import 'package:vegetables/screens/cart_screen.dart';
 import 'package:vegetables/screens/category_screen.dart';
 import 'package:vegetables/screens/favorites_screen.dart';
 import 'package:vegetables/screens/profile.dart';
@@ -30,6 +31,9 @@ class _Tabs extends State<Tabs> {
     }
 
     if (_selectedPageIndex == 2) {
+      activePage = const CartScreen();
+    }
+    if (_selectedPageIndex == 3) {
       activePage = const Center(child: ProfileScreen());
     }
 
@@ -47,6 +51,7 @@ class _Tabs extends State<Tabs> {
       bottomNavigationBar: BlocBuilder<CartCubit, CartState>(
         builder: (context, state) {
           return BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
             currentIndex: _selectedPageIndex,
             onTap: (index) {
               setState(() {
@@ -60,6 +65,10 @@ class _Tabs extends State<Tabs> {
                 icon: Icon(Icons.grid_view_rounded),
                 label: 'Categories',
               ),
+              const BottomNavigationBarItem(
+                icon: Icon(Icons.favorite),
+                label: 'Favorites',
+              ),
               BottomNavigationBarItem(
                 icon: state.maybeWhen(
                     orElse: () => const Icon(Icons.shopping_cart_outlined),
@@ -70,7 +79,7 @@ class _Tabs extends State<Tabs> {
                         child: const Icon(Icons.shopping_cart_outlined),
                       );
                     }),
-                label: 'Favorites',
+                label: 'Cart',
               ),
               const BottomNavigationBarItem(
                 icon: Icon(Icons.account_circle_outlined),
