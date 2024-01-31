@@ -16,16 +16,20 @@ class CartScreen extends StatelessWidget {
         BlocBuilder<CartCubit, CartState>(
           builder: (context, state) {
             return Column(
-              children: state.maybeWhen(
-                deleteFromCart: (count) =>
-                    [const Center(child: Text("Cart is empty"))],
-                orElse: () => carts
-                    .map((item) => ListTile(
-                          title: Text("${item.vegetable.name} - ${item.count}"),
-                        ))
-                    .toList(),
-              ),
-            );
+                children: state.maybeWhen(
+                    initial: (count) => [const EmptyCart()],
+                    orElse: () {
+                      if (carts.isEmpty) {
+                        return [const EmptyCart()];
+                      } else {
+                        return carts
+                            .map((item) => ListTile(
+                                  title: Text(
+                                      "${item.vegetable.name} - ${item.count}"),
+                                ))
+                            .toList();
+                      }
+                    }));
           },
         ),
         Expanded(
@@ -58,5 +62,16 @@ class CartScreen extends StatelessWidget {
         )
       ],
     );
+  }
+}
+
+class EmptyCart extends StatelessWidget {
+  const EmptyCart({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Center(child: Text("Cart is empty"));
   }
 }
