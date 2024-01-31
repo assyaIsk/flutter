@@ -41,7 +41,7 @@ class _ImageSliderState extends State<ImageSlider> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 BottomAppBar(
-                  color: Colors.black.withOpacity(0),
+                  color: AppStyles.blackColor.withOpacity(0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
@@ -60,7 +60,7 @@ class _ImageSliderState extends State<ImageSlider> {
                               radius: 8,
                               backgroundColor: _currentIndex == i
                                   ? AppStyles.blueColor
-                                  : AppStyles.whiteBtnColor,
+                                  : AppStyles.whiteColor,
                             ),
                           ),
                         ),

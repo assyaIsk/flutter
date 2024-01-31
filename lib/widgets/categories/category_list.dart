@@ -43,9 +43,8 @@ class _CategoryListState extends State<CategoryList> {
                 side: const BorderSide(),
                 borderRadius: BorderRadius.circular(17.0),
               ),
-              backgroundColor: item.active
-                  ? AppStyles.violetColor2
-                  : AppStyles.whiteBtnColor);
+              backgroundColor:
+                  item.active ? AppStyles.violetColor2 : AppStyles.whiteColor);
         }).toList(),
       ),
     );

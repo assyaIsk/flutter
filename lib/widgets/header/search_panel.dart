@@ -19,7 +19,7 @@ class SearchPanel extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(22, 12, 22, 12),
       decoration: BoxDecoration(
         border: Border.all(color: AppStyles.violetColor3),
-        color: AppStyles.whiteBtnColor,
+        color: AppStyles.whiteColor,
         borderRadius: BorderRadius.circular(27),
       ),
       child: Row(

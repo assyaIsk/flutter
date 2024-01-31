@@ -8,9 +8,12 @@ class AppStyles {
   static const Color violetColor = Color(0xff9586a8);
   static const Color violetColor2 = Color(0xFFE2CBFF);
   static const Color violetColor3 = Color(0xFFD9D0E3);
-  static const Color whiteBtnColor = Color(0xFFFFFFFF);
-  static const Color greenBtnColor = Color(0xFF0BCE83);
+  static const Color whiteColor = Colors.white;
+  static const Color greenColor = Color(0xFF0BCE83);
   static const Color blueColor = Color(0xFF6C0EE4);
+  static const Color cardColor = Color.fromARGB(255, 247, 241, 251);
+  static const Color redColor = Colors.red;
+  static const Color blackColor = Colors.black;
 
   static const TextStyle detailTitleTextStyle30 = TextStyle(
       fontSize: 30,
@@ -40,7 +43,7 @@ class AppStyles {
       fontSize: 17,
       fontWeight: FontWeight.w500,
       letterSpacing: -0.41,
-      color: AppStyles.greenBtnColor);
+      color: AppStyles.greenColor);
 
   static const TextStyle detailVioletTextStyle17 = TextStyle(
       fontSize: 17,
@@ -63,5 +66,10 @@ class AppStyles {
       fontSize: 15,
       fontWeight: FontWeight.w600,
       letterSpacing: -0.41,
-      color: Colors.white);
+      color: AppStyles.whiteColor);
+  static const TextStyle violetTextStyle12 = TextStyle(
+      fontSize: 12,
+      fontWeight: FontWeight.w400,
+      letterSpacing: -0.41,
+      color: AppStyles.violetColor);
 }

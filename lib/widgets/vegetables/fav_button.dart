@@ -14,11 +14,11 @@ class FavButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String favIcon = 'assets/svg/heart.svg';
-    Color favIconColor = Colors.black;
+    Color favIconColor = AppStyles.blackColor;
 
     setDefaultsFavIcon() {
       favIcon = 'assets/svg/heart.svg';
-      favIconColor = Colors.black;
+      favIconColor = AppStyles.blackColor;
     }
 
     return BlocBuilder<FavoritesCubit, FavoritesState>(
@@ -32,7 +32,7 @@ class FavButton extends StatelessWidget {
                   if (vegetable.isFavorite == true)
                     {
                       favIcon = 'assets/svg/favorite.svg',
-                      favIconColor = Colors.red
+                      favIconColor = AppStyles.redColor
                     }
                 });
         return Container(
@@ -48,7 +48,7 @@ class FavButton extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(8.0),
                   ),
-                  backgroundColor: AppStyles.whiteBtnColor),
+                  backgroundColor: AppStyles.whiteColor),
               child: SvgPicture.asset(favIcon, color: favIconColor)),
         );
       },

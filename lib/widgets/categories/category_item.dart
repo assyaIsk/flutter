@@ -9,16 +9,38 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      child: Column(children: [
+      child: Stack(children: [
         Image.asset(
-            category.image == '' ? 'assets/png/default.png' : category.image),
+          category.image == "" ? 'assets/png/default.png' : category.image,
+          fit: BoxFit.cover,
+        ),
         const SizedBox(
           height: 2,
         ),
-        Text(
-          category.name,
-          style: AppStyles.violetDarkTextStyle18,
-        )
+        Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                decoration: const BoxDecoration(color: AppStyles.cardColor),
+                child: Text(
+                  category.name,
+                  style: AppStyles.violetDarkTextStyle18,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+              Container(
+                padding: const EdgeInsets.only(bottom: 5),
+                child: Text(
+                  "(${category.count})",
+                  style: AppStyles.violetTextStyle12,
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ],
+          ),
+        ),
       ]),
     );
   }

@@ -31,7 +31,7 @@ class ProfileScreen extends StatelessWidget {
           .map((item) => ListTile(
                 title: Text(item.name),
                 leading: const Icon(Icons.favorite),
-                iconColor: Colors.red,
+                iconColor: AppStyles.redColor,
               ))
           .toList(),
     ]);

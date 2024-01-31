@@ -44,10 +44,10 @@ class CartScreen extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8.0),
                     ),
-                    backgroundColor: Colors.red),
+                    backgroundColor: AppStyles.redColor),
                 icon: const Icon(
                   Icons.delete,
-                  color: Colors.white,
+                  color: AppStyles.whiteColor,
                 ),
                 label: const Text(
                   'Clear Cart',

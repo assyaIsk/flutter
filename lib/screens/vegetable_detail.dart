@@ -101,7 +101,7 @@ class VegetableDetailScreen extends StatelessWidget {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(8.0),
                                 ),
-                                backgroundColor: AppStyles.greenBtnColor),
+                                backgroundColor: AppStyles.greenColor),
                           ),
                         ),
                       ],

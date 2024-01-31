@@ -117,7 +117,7 @@ class VegetablesListWidget extends StatelessWidget {
                       SizedBox(
                         width: quarterWidth,
                         child: IconButton(
-                          color: AppStyles.greenBtnColor,
+                          color: AppStyles.greenColor,
                           icon: SvgPicture.asset(
                             'assets/svg/shopping-cart.svg',
                           ),
@@ -130,7 +130,7 @@ class VegetablesListWidget extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(8.0),
                             ),
-                            backgroundColor: AppStyles.greenBtnColor,
+                            backgroundColor: AppStyles.greenColor,
                           ),
                         ),
                       ),
